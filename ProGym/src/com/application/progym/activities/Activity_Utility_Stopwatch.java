@@ -21,7 +21,7 @@ public class Activity_Utility_Stopwatch extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_home); //Create new layout xml
+		setContentView(R.layout.activity_utility_stopwatch); 
 		
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);

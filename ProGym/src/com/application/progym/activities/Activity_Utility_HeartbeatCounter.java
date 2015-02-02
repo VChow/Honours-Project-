@@ -21,7 +21,7 @@ public class Activity_Utility_HeartbeatCounter extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_home); //Create new layout xml
+		setContentView(R.layout.activity_utility_heartbeatcounter); 
 		
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);

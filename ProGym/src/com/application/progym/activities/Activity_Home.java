@@ -86,25 +86,25 @@ public class Activity_Home extends Activity {
 			{
 				if(position == 0) //Workouts
 				{
-					//Intent intentWorkouts = new Intent(getApplicationContext(),Activity_Workouts.class);
-					//startActivity(intentWorkouts);
+					Intent intentWorkouts = new Intent(getApplicationContext(),Activity_Workouts.class);
+					startActivity(intentWorkouts);
 				}
 				else if(position == 1) //Utilities
 				{
-					//Intent intentUtilities = new Intent(getApplicationContext(),Activity_Utilities.class);
-					//startActivity(intentUtilities);
+					Intent intentUtilities = new Intent(getApplicationContext(),Activity_Utilities.class);
+					startActivity(intentUtilities);
 				}
-				else if(position == 2) //Run
+				else if(position == 2) //Run?
 				{
 					//Intent intentRun = new Intent(getApplicationContext(),Activity_Run.class);
 					//startActivity(intentRun);
 				}
-				else if(position == 3) //Calorie Counter
+				else if(position == 3) //Calorie Counter?
 				{
 					//Intent intentCalorie = new Intent(getApplicationContext(),Activity_Calorie.class);
 					//startActivity(intentCalorie);
 				}
-				else if(position == 4) //Graphs
+				else if(position == 4) //Graphs?
 				{
 					//Intent intentGraphs = new Intent(getApplicationContext(),Activity_Graphs.class);
 					//startActivity(intentGraphs);
