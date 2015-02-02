@@ -12,9 +12,9 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo" >
+        android:theme="@android:style/Theme.Holo.Light" >
         
-        <!-- ========================== Primary Activities ========================== -->
+        <!-- ========================== Startup Activity ========================== -->
         
         <!-- Activity_Home -->
         <activity
@@ -25,8 +25,71 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            
+            </intent-filter>        
+        </activity>
+        
+        <!-- ==========================  Activities: Utilities ========================== -->
+        
+        <!-- Activity_Utilities -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Utilities"
+            android:label="@string/activity_utilities" >                      
+        </activity>
+        
+        <!-- Activity_Utility_HeartbeatCounter -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Utility_HeartbeatCounter"
+            android:label="@string/activity_utility_heartbeatcounter" >                      
+        </activity>
+        
+        <!-- Activity_Utility_Pedometer -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Utility_Pedometer"
+            android:label="@string/activity_utility_pedometer" >                      
+        </activity>
+        
+        <!-- Activity_Utility_Stopwatch -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Utility_Stopwatch"
+            android:label="@string/activity_utility_stopwatch" >                      
+        </activity>
+        
+        <!-- Activity_Utility_Timer -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Utility_Timer"
+            android:label="@string/activity_utility_timer" >                      
+        </activity>
+        
+        <!-- ==========================  Activities: Workouts ========================== -->
+        
+        <!-- Activity_Workouts -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Workouts"
+            android:label="@string/activity_workouts" >                      
+        </activity>
+        
+        <!-- Activity_Workout_Arms -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Workout_Arms"
+            android:label="@string/activity_workout_arms" >                      
+        </activity>
+        
+        <!-- Activity_Workout_Core -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Workout_Core"
+            android:label="@string/activity_workout_core" >                      
+        </activity>
+        
+        <!-- Activity_Workout_Legs -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Workout_Legs"
+            android:label="@string/activity_workout_legs" >                      
+        </activity>
+        
+        <!-- Activity_Workout_UpperBody -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Workout_Upperbody"
+            android:label="@string/activity_workout_upperbody" >                      
         </activity>
         
         <!-- ========================== Menu Bar Activities ========================== -->

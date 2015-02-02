@@ -5,11 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewConfiguration;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.application.progym.R;
 import com.application.progym.activities.menubar.Activity_About;
 import com.application.progym.activities.menubar.Activity_Help;
+import com.application.progym.adapters.ImageAdapterMain;
 import com.application.progym.utilities.Utilities;
 
 public class Activity_Home extends Activity {
@@ -21,7 +26,10 @@ public class Activity_Home extends Activity {
 		
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
-	}
+		
+		//Create Home Screen Selection Menu
+		createCategories();
+	}  
 
 	/**
 	 * Creates the Menu Bar.
@@ -66,6 +74,42 @@ public class Activity_Home extends Activity {
 
 	private void createCategories()
 	{
-		
+		//Get the reference of ListViewCategories
+		final GridView categoriesGrid=(GridView)findViewById(R.id.gridview_main);
+		categoriesGrid.setAdapter(new ImageAdapterMain(this));
+
+		//Register onClickListener to handle click events on each item.
+		categoriesGrid.setOnItemClickListener(new OnItemClickListener()
+		{
+			//Argument position gives the index of item which is clicked.
+			public void onItemClick(AdapterView<?> arg0, View v, int position, long arg3)
+			{
+				if(position == 0) //Workouts
+				{
+					//Intent intentWorkouts = new Intent(getApplicationContext(),Activity_Workouts.class);
+					//startActivity(intentWorkouts);
+				}
+				else if(position == 1) //Utilities
+				{
+					//Intent intentUtilities = new Intent(getApplicationContext(),Activity_Utilities.class);
+					//startActivity(intentUtilities);
+				}
+				else if(position == 2) //Run
+				{
+					//Intent intentRun = new Intent(getApplicationContext(),Activity_Run.class);
+					//startActivity(intentRun);
+				}
+				else if(position == 3) //Calorie Counter
+				{
+					//Intent intentCalorie = new Intent(getApplicationContext(),Activity_Calorie.class);
+					//startActivity(intentCalorie);
+				}
+				else if(position == 4) //Graphs
+				{
+					//Intent intentGraphs = new Intent(getApplicationContext(),Activity_Graphs.class);
+					//startActivity(intentGraphs);
+				}
+			}
+		});
 	}
 }

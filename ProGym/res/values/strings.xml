@@ -4,6 +4,20 @@
     <string name="app_name">Pro-Gym</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Activities: Utilities -->
+    <string name="activity_utilities">Utilities</string>
+    <string name="activity_utility_heartbeatcounter">Heartbeat Counter</string>
+    <string name="activity_utility_pedometer">Pedometer</string>
+    <string name="activity_utility_stopwatch">Stopwatch</string>
+    <string name="activity_utility_timer">Timer</string>
+    
+    <!-- Activities: Workouts -->
+    <string name="activity_workouts">Workouts</string>
+    <string name="activity_workout_arms">Arms</string>
+    <string name="activity_workout_core">Core</string>
+    <string name="activity_workout_legs">Legs</string>
+    <string name="activity_workout_upperbody">Upper Body</string>
+    
     <!-- Menu Bar Actions -->
     <string name="action_home">Home</string>
     <string name="action_help">Help</string>

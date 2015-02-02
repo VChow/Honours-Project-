@@ -13,9 +13,11 @@
         android:layout_height="match_parent"
         android:verticalSpacing="0dp"
         android:horizontalSpacing="0dp"
-        android:stretchMode="columnWidth"
-        android:paddingTop="100dp"
-        android:numColumns="2" 
+        android:stretchMode="columnWidth"       
+        android:numColumns="2"
         />
+	
+		<!-- Add padding to the top -->
+		<!-- android:paddingTop="100dp" -->
 	
 </FrameLayout>
