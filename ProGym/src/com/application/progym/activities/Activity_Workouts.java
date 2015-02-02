@@ -26,6 +26,8 @@ public class Activity_Workouts extends Activity{
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
 
+		//Create Workouts Screen Selection Menu
+		createCategories();
 	}  
 	
 	/**
@@ -67,5 +69,13 @@ public class Activity_Workouts extends Activity{
 		default:
 	        return super.onOptionsItemSelected(item);
 		}
+	}
+
+	/**
+	 * Populates the GridView with selectables defined in the ImageAdapterMain class.
+	 */
+	private void createCategories()
+	{
+		
 	}
 }

@@ -72,6 +72,9 @@ public class Activity_Home extends Activity {
 		}
 	}
 
+	/**
+	 * Populates the GridView with selectables defined in the ImageAdapterMain class.
+	 */
 	private void createCategories()
 	{
 		//Get the reference of ListViewCategories
