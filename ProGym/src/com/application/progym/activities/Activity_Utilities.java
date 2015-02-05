@@ -3,6 +3,8 @@ package com.application.progym.activities;
 import com.application.progym.R;
 import com.application.progym.activities.menubar.Activity_About;
 import com.application.progym.activities.menubar.Activity_Help;
+import com.application.progym.adapters.ImageAdapterUtilities;
+import com.application.progym.adapters.ImageAdapterWorkouts;
 import com.application.progym.utilities.Utilities;
 
 import android.app.Activity;
@@ -10,7 +12,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewConfiguration;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.AdapterView.OnItemClickListener;
 
 /**
  * Generates the Utility Selection Screen
@@ -26,6 +32,8 @@ public class Activity_Utilities extends Activity{
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
 
+		//Create Utility Screen Selection Menu
+		createCategories();
 	}  
 	
 	/**
@@ -69,4 +77,42 @@ public class Activity_Utilities extends Activity{
 		}
 	}
 	
+	/**
+	 * Populates the GridView with selectables defined in the ImageAdapterMain class.
+	 */
+	private void createCategories()
+	{
+		//Get the reference of ListViewCategories
+		final GridView categoriesGrid=(GridView)findViewById(R.id.gridview_main);
+		categoriesGrid.setAdapter(new ImageAdapterUtilities(this));
+
+		//Register onClickListener to handle click events on each item.
+		categoriesGrid.setOnItemClickListener(new OnItemClickListener()
+		{
+			//Argument position gives the index of item which is clicked.
+			public void onItemClick(AdapterView<?> arg0, View v, int position, long arg3)
+			{
+				if(position == 0) //Timer
+				{
+					Intent intentUtilityTimer = new Intent(getApplicationContext(),Activity_Utility_Timer.class);
+					startActivity(intentUtilityTimer);
+				}
+				else if(position == 1) //Stopwatch
+				{
+					Intent intentStopwatch = new Intent(getApplicationContext(),Activity_Utility_Stopwatch.class);
+					startActivity(intentStopwatch);
+				}
+				else if(position == 2) //Pedometer
+				{
+					Intent intentPedometer = new Intent(getApplicationContext(),Activity_Utility_Pedometer.class);
+					startActivity(intentPedometer);
+				}
+				else if(position == 3) //Heartbeat Counter
+				{
+					Intent intentHeartbeatCounter = new Intent(getApplicationContext(),Activity_Utility_HeartbeatCounter.class);
+					startActivity(intentHeartbeatCounter);
+				}	
+			}
+		});
+	}
 }

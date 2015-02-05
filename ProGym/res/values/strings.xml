@@ -17,6 +17,7 @@
     <string name="activity_workout_core">Core</string>
     <string name="activity_workout_legs">Legs</string>
     <string name="activity_workout_upperbody">Upper Body</string>
+    <string name="activity_workout_cardio">Cardio</string>
     
     <!-- Menu Bar Actions -->
     <string name="action_home">Home</string>

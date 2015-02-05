@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.application.progym.R;
 
-public class ImageAdapaterWorkouts extends BaseAdapter {
+public class ImageAdapterWorkouts extends BaseAdapter {
     private List<Item> items = new ArrayList<Item>();
     private LayoutInflater inflater;
 
@@ -22,14 +22,14 @@ public class ImageAdapaterWorkouts extends BaseAdapter {
      * 
      * @param context The Context of the application/object.
      */
-    public ImageAdapaterWorkouts(Context context) {
+    public ImageAdapterWorkouts(Context context) {
         inflater = LayoutInflater.from(context);
 
-        items.add(new Item("Arms",       	R.drawable.ic_placeholder));
-        items.add(new Item("UpperBody",   	R.drawable.ic_placeholder));
-        items.add(new Item("Core", 			R.drawable.ic_placeholder));
-        items.add(new Item("Legs", 			R.drawable.ic_placeholder));
-        items.add(new Item("Cardio",		R.drawable.ic_placeholder));
+        items.add(new Item("Arms",       	R.drawable.ic_workout_arms));
+        items.add(new Item("UpperBody",   	R.drawable.ic_workout_upperbody));
+        items.add(new Item("Core", 			R.drawable.ic_workout_core));
+        items.add(new Item("Legs", 			R.drawable.ic_workout_legs));
+        items.add(new Item("Cardio",		R.drawable.ic_workout_cardio));
         
     }
 

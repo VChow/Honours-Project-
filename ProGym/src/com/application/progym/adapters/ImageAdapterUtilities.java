@@ -28,10 +28,10 @@ public class ImageAdapterUtilities extends BaseAdapter {
     public ImageAdapterUtilities(Context context) {
         inflater = LayoutInflater.from(context);
 
-        items.add(new Item("Timer",       			R.drawable.ic_placeholder));
-        items.add(new Item("Stopwatch",   			R.drawable.ic_placeholder));
-        items.add(new Item("Pedometer", 			R.drawable.ic_placeholder));
-        items.add(new Item("Heartbeat Counter", 	R.drawable.ic_placeholder));
+        items.add(new Item("Timer",       			R.drawable.ic_utility_timer));
+        items.add(new Item("Stopwatch",   			R.drawable.ic_utility_stopwatch));
+        items.add(new Item("Pedometer", 			R.drawable.ic_utility_pedometer));
+        items.add(new Item("Heartbeat Counter", 	R.drawable.ic_utility_heartbeat_counter));
         
     }
 

@@ -3,6 +3,7 @@ package com.application.progym.activities;
 import com.application.progym.R;
 import com.application.progym.activities.menubar.Activity_About;
 import com.application.progym.activities.menubar.Activity_Help;
+import com.application.progym.adapters.ImageAdapterWorkouts;
 import com.application.progym.utilities.Utilities;
 
 import android.app.Activity;
@@ -10,7 +11,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewConfiguration;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.AdapterView.OnItemClickListener;
 
 /**
  * Handles the Workouts Selection Screen.
@@ -76,6 +81,42 @@ public class Activity_Workouts extends Activity{
 	 */
 	private void createCategories()
 	{
-		
+		//Get the reference of ListViewCategories
+		final GridView categoriesGrid=(GridView)findViewById(R.id.gridview_main);
+		categoriesGrid.setAdapter(new ImageAdapterWorkouts(this));
+
+		//Register onClickListener to handle click events on each item.
+		categoriesGrid.setOnItemClickListener(new OnItemClickListener()
+		{
+			//Argument position gives the index of item which is clicked.
+			public void onItemClick(AdapterView<?> arg0, View v, int position, long arg3)
+			{
+				if(position == 0) //Arms
+				{
+					Intent intentWorkoutArms = new Intent(getApplicationContext(),Activity_Workout_Arms.class);
+					startActivity(intentWorkoutArms);
+				}
+				else if(position == 1) //UpperBody
+				{
+					Intent intentWorkoutUpperBody = new Intent(getApplicationContext(),Activity_Workout_UpperBody.class);
+					startActivity(intentWorkoutUpperBody);
+				}
+				else if(position == 2) //Core
+				{
+					Intent intentWorkoutCore = new Intent(getApplicationContext(),Activity_Workout_Core.class);
+					startActivity(intentWorkoutCore);
+				}
+				else if(position == 3) //Legs
+				{
+					Intent intentWorkoutLegs = new Intent(getApplicationContext(),Activity_Workout_Legs.class);
+					startActivity(intentWorkoutLegs);
+				}	
+				else if(position == 4) //Cardio
+				{
+					Intent intentWorkoutCardio = new Intent(getApplicationContext(),Activity_Workout_Cardio.class);
+					startActivity(intentWorkoutCardio);
+				}
+			}
+		});
 	}
 }

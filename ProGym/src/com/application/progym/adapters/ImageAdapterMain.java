@@ -29,10 +29,10 @@ public class ImageAdapterMain extends BaseAdapter {
     public ImageAdapterMain(Context context) {
         inflater = LayoutInflater.from(context);
 
-        items.add(new Item("Workouts",       		R.drawable.ic_placeholder));
-        items.add(new Item("Utilities",   			R.drawable.ic_placeholder));
-        items.add(new Item("Personal Statistics", 	R.drawable.ic_placeholder));
-        items.add(new Item("Run", 					R.drawable.ic_placeholder));
+        items.add(new Item("Workouts",       		R.drawable.ic_home_workout)); //R.drawable.ic_placeholder
+        items.add(new Item("Utilities",   			R.drawable.ic_home_utility));
+        items.add(new Item("Personal Statistics", 	R.drawable.ic_home_personal_statistics));
+        items.add(new Item("Run", 					R.drawable.ic_home_run));
         items.add(new Item("Advice",				R.drawable.ic_placeholder));
         
     }

@@ -92,6 +92,12 @@
             android:label="@string/activity_workout_upperbody" >                      
         </activity>
         
+        <!-- Activity_Workout_Cardio -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Workout_Cardio"
+            android:label="@string/activity_workout_cardio" >                      
+        </activity>
+        
         <!-- ========================== Menu Bar Activities ========================== -->
         
         <!-- Activity_Help -->
