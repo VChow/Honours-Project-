@@ -1,0 +1,17 @@
+{
+	"cardio": [
+		{
+			"index": 0,
+			"name": "Cardio 0",
+			"description": "Test data for Cardio 0",
+			"images": [
+				{
+					"path": "doge"
+				},
+				{
+					"path": "doge2"
+				}			
+			]
+		}
+	]
+}

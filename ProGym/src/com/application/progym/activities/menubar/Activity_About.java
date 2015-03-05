@@ -11,6 +11,10 @@ import com.application.progym.R;
 import com.application.progym.activities.Activity_Home;
 import com.application.progym.utilities.Utilities;
 
+/**
+ * Displays the About page: 
+ * Author, Project, Year, Purpose, Technologies.
+ */
 public class Activity_About extends Activity{
 	
 	@Override

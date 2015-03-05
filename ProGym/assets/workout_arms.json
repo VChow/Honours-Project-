@@ -1,0 +1,17 @@
+{
+	"arms": [
+		{
+			"index": 0,
+			"name": "Arms 0",
+			"description": "Test data for Arms 0",
+			"images": [
+				{
+					"path": "doge"
+				},
+				{
+					"path": "doge2"
+				}			
+			]
+		}
+	]
+}

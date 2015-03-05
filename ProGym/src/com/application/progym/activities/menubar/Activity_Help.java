@@ -11,6 +11,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewConfiguration;
 
+/**
+ * Displays the Help page:
+ * How to use the application.
+ */
 public class Activity_Help extends Activity{
 
 	@Override

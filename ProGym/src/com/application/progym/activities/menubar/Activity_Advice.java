@@ -10,6 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewConfiguration;
 
+/**
+ * Displays the Advice page:
+ * Random facts?
+ */
 public class Activity_Advice extends Activity{
 	
 	@Override

@@ -1,0 +1,17 @@
+{
+	"upperbody": [
+		{
+			"index": 0,
+			"name": "Upperbpdy 0",
+			"description": "Test data for upperbody 0",
+			"images": [
+				{
+					"path": "doge"
+				},
+				{
+					"path": "doge2"
+				}			
+			]
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"core": [
+		{
+			"index": 0,
+			"name": "Core 0",
+			"description": "Test data for Core 0",
+			"images": [
+				{
+					"path": "doge"
+				},
+				{
+					"path": "doge2"
+				}			
+			]
+		}
+	]
+}
