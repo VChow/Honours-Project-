@@ -1,5 +1,14 @@
 package com.application.progym.activities;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.widget.Button;
+
 import com.application.progym.R;
 import com.application.progym.activities.menubar.Activity_About;
 import com.application.progym.activities.menubar.Activity_Help;
@@ -7,18 +16,14 @@ import com.application.progym.activities.menubar.Activity_Preferences;
 import com.application.progym.activities.menubar.Activity_Update;
 import com.application.progym.utilities.Utilities;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.ViewConfiguration;
-
 /**
  * Handles the Pedometer functionality.
  *
  */
 public class Activity_Utility_Pedometer extends Activity{
+	 
+	Button buttonStartStop;
+	int buttonState;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +33,17 @@ public class Activity_Utility_Pedometer extends Activity{
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
 
+		//Instantiate button
+		buttonStartStop = (Button) findViewById(R.id.buttonStartStop_Pedometer);
+	
+		//Initialise variables
+		buttonState = 0; //0 = Stopped, 1 = Start
 	}  
+	
+	public void buttonStartStop_Pedometer(View view)
+	{
+		
+	}
 	
 	/**
 	 * Creates the Menu Bar.
