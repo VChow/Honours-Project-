@@ -29,8 +29,19 @@
     <string name="action_update">Update</string>
     <string name="action_exit">Exit</string>
     
+    <!-- Activity: About Screen -->
+    <string name="about">
+        &#8226; Pro-Gym is a Fitness &amp; Workout Utility Android Application.
+        \n\n&#8226; Developed by Victor Chow for his Honours Project as part of the University of Dundee\'s Applied Computing course (Bsc Hons).
+        \n\n&#8226; The aim of this application is to provide informaiton and tools to new users, and does not require them to join a gym.
+        \n\n&#8226; All the workouts provided insde the Pro-Gym application, do not require any gym equipment and can be completed at home.
+        \n\n&#8226; Pro-Gym aims to provide a series of basic utilities e.g. Timers, Stopwatches etc. in addition to a category of workouts.
+        \n\n&#8226; The Pro-Gym application can also be used with the Samsung Galaxy Gear Live Smartwatch.
+        \n\n&#8226; All icons were obtained through the website: http://www.flaticon.com/
+        \n\n&#8226; Any problems or bugs can be e-mailed to the developer at: victorchow507@gmail.com.
+    </string>
+    
     <!-- Activity: Help Screen -->
-    <!-- Bullet Point: &#8226; -->
 	<string name="help_header">Welcome to Pro-Gym: Fitness &amp; Workout Utility Application.</string>
     <string name="help_Home_0">Home</string>
     <string name="help_Workouts_0">Workouts</string>

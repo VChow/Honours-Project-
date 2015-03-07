@@ -20,7 +20,7 @@ public class Activity_About extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_home);
+		setContentView(R.layout.activity_about);
 		
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
