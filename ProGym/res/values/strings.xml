@@ -29,6 +29,9 @@
     <string name="action_update">Update</string>
     <string name="action_exit">Exit</string>
     
+    <!-- Activity: Update Screen -->
+    <string name="update"></string>
+    
     <!-- Activity: About Screen -->
     <string name="about">
         &#8226; Pro-Gym is a Fitness &amp; Workout Utility Android Application.

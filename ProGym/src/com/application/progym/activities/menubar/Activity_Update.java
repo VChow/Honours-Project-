@@ -4,6 +4,8 @@ import com.application.progym.R;
 import com.application.progym.utilities.Utilities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,8 +21,35 @@ public class Activity_Update extends Activity{
 		
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
+		
+		showDialog();
 	}
 	
+	/**
+	 * Display a prompt to ask user to update through Google Play Store.
+	 */
+	private void showDialog()
+	{
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Please check the Google Play Store for updates.")
+			   .setTitle("Update")
+			   .setPositiveButton("Ok", new DialogInterface.OnClickListener()
+			   {
+				   public void onClick(DialogInterface dialog, int which) {
+					   //Close the activity
+					   finish();
+				   }
+			   })
+			   .setIcon(android.R.drawable.ic_dialog_alert)
+			   .show();
+	}
+	
+	/**
+	 * Creates the Menu Bar.
+	 * 
+	 * (non-Javadoc)
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
