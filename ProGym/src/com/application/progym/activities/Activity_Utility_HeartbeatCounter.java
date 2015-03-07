@@ -1,5 +1,15 @@
 package com.application.progym.activities;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.ViewConfiguration;
+import android.widget.Button;
+
 import com.application.progym.R;
 import com.application.progym.activities.menubar.Activity_About;
 import com.application.progym.activities.menubar.Activity_Help;
@@ -7,18 +17,14 @@ import com.application.progym.activities.menubar.Activity_Preferences;
 import com.application.progym.activities.menubar.Activity_Update;
 import com.application.progym.utilities.Utilities;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.ViewConfiguration;
-
 /**
  * Handles the Heartbeat Counter functionality.
  * 
  */
 public class Activity_Utility_HeartbeatCounter extends Activity{
+	
+	Button buttonStart;
+	int buttonState;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +34,38 @@ public class Activity_Utility_HeartbeatCounter extends Activity{
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
 
+		//Instantiate button
+		buttonStart = (Button) findViewById(R.id.buttonStartRecord);
+		
+		//Initialise variables
+		buttonState = 0; //0 = Stopped, 1 = Reset
 	}  
+	
+	/**
+	 * Display instructions to user and record BPM.
+	 */
+	public void buttonStart()
+	{
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Place your thumb over the Heartbeat Sensor and do not remove until it is finished.")
+			   .setTitle("Heartbeat Counter")
+			   .setPositiveButton("Ok", new DialogInterface.OnClickListener()
+			   {
+				   public void onClick(DialogInterface dialog, int which) {
+					   record();
+				   }
+			   })
+			   .setIcon(android.R.drawable.ic_dialog_alert)
+			   .show();
+	}
+	
+	/**
+	 * Opens the Heartbeat sensor and records user's BPM
+	 */
+	private void record()
+	{
+		//TODO
+	}
 	
 	/**
 	 * Creates the Menu Bar.
