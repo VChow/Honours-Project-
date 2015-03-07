@@ -3,6 +3,8 @@ package com.application.progym.activities;
 import com.application.progym.R;
 import com.application.progym.activities.menubar.Activity_About;
 import com.application.progym.activities.menubar.Activity_Help;
+import com.application.progym.activities.menubar.Activity_Preferences;
+import com.application.progym.activities.menubar.Activity_Update;
 import com.application.progym.adapters.ImageAdapterUtilities;
 import com.application.progym.adapters.ImageAdapterWorkouts;
 import com.application.progym.utilities.Utilities;
@@ -65,6 +67,12 @@ public class Activity_Utilities extends Activity{
 			return true;
 		case (R.id.action_about):
 			this.startActivity(new Intent(this, Activity_About.class));
+			return true;
+		case (R.id.action_preferences):
+			this.startActivity(new Intent(this, Activity_Preferences.class));
+			return true;
+		case (R.id.action_update):
+			this.startActivity(new Intent(this, Activity_Update.class));
 			return true;
 		case (R.id.action_exit):
 			Intent intent = new Intent(Intent.ACTION_MAIN); 

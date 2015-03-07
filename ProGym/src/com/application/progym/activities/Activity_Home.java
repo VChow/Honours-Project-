@@ -8,12 +8,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.GridView;
 
 import com.application.progym.R;
 import com.application.progym.activities.menubar.Activity_About;
 import com.application.progym.activities.menubar.Activity_Help;
+import com.application.progym.activities.menubar.Activity_Preferences;
+import com.application.progym.activities.menubar.Activity_Update;
 import com.application.progym.adapters.ImageAdapterMain;
 import com.application.progym.utilities.Utilities;
 
@@ -61,6 +63,12 @@ public class Activity_Home extends Activity {
 		case (R.id.action_about):
 			this.startActivity(new Intent(this, Activity_About.class));
 			return true;
+		case (R.id.action_preferences):
+			this.startActivity(new Intent(this, Activity_Preferences.class));
+			return true;
+		case (R.id.action_update):
+			this.startActivity(new Intent(this, Activity_Update.class));
+			return true;	
 		case (R.id.action_exit):
 			Intent intent = new Intent(Intent.ACTION_MAIN); 
 	    	intent.addCategory(Intent.CATEGORY_HOME);

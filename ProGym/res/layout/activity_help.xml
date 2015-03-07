@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:layout_marginRight="15dp" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp" >
+    
+    <!-- Header -->	
+    <TextView
+       	android:id="@+id/textHeader"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="20sp"
+    	android:text="@string/help_header"
+    	 />
+    
+    <!-- Home -->
+    <TextView
+       	android:id="@+id/textHome"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="25sp"
+       	android:layout_marginTop="15sp"
+       	android:textStyle="bold"     	
+    	android:text="@string/help_Home_0"
+    	 />
+    
+    <TextView
+       	android:id="@+id/textHome1"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="20sp"
+       	android:layout_marginTop="5sp"
+       	android:layout_marginLeft="10sp"    	
+    	android:text="@string/help_Home_1"
+    	 />
+    
+    <!-- Workouts -->
+    <TextView
+       	android:id="@+id/textWorkouts"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="25sp"
+       	android:layout_marginTop="15sp"
+       	android:textStyle="bold"     	
+    	android:text="@string/help_Workouts_0"
+    	 />
+    
+    <TextView
+       	android:id="@+id/textWorkouts1"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="20sp"
+       	android:layout_marginTop="5sp"    	
+    	android:text="@string/help_Workouts_1"
+    	 />
+    
+    <!-- Utilities -->
+    <TextView
+       	android:id="@+id/textUtilities"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="25sp"
+       	android:layout_marginTop="15sp"
+       	android:textStyle="bold"     	
+    	android:text="@string/help_Utilities_0"
+    	 />
+	
+    <TextView
+       	android:id="@+id/textUtilities1"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="20sp"
+       	android:layout_marginTop="5sp"
+       	android:maxLines="100"    	
+    	android:text="@string/help_Utilities_1"
+    	 />
+    
+    <!-- Calorie Tracker -->
+    <TextView
+       	android:id="@+id/textCalorieTracker"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="25sp"
+       	android:layout_marginTop="15sp"
+       	android:textStyle="bold"     	
+    	android:text="@string/help_CalorieTracker_0"
+    	 />
+    
+    <TextView
+       	android:id="@+id/textCalorieTracker1"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="20sp"
+       	android:layout_marginTop="5sp"    	
+    	android:text="@string/help_CalorieTracker_1"
+    	 />
+    
+    <!-- Run -->
+    <TextView
+       	android:id="@+id/textRun"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="25sp"
+       	android:layout_marginTop="15sp"
+       	android:textStyle="bold"     	
+    	android:text="@string/help_Run_0"
+    	 />
+    
+    <TextView
+       	android:id="@+id/textRun1"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="20sp"
+       	android:layout_marginTop="5sp"    	
+    	android:text="@string/help_Run_1"
+    	 />
+    
+    <!-- Advice -->
+    <TextView
+       	android:id="@+id/textAdvice"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="25sp"
+       	android:layout_marginTop="15sp"
+       	android:textStyle="bold"     	
+    	android:text="@string/help_Advice_0"
+    	 />
+    
+    <TextView
+       	android:id="@+id/textAdvice1"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="20sp"
+       	android:layout_marginTop="5sp"    	
+    	android:text="@string/help_Advice_1"
+    	 />
+    
+    <!-- Preferences -->
+    <TextView
+       	android:id="@+id/textPreferences"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="25sp"
+       	android:layout_marginTop="15sp"
+       	android:textStyle="bold"     	
+    	android:text="@string/help_Preferences_0"
+    	 />
+    
+    <TextView
+       	android:id="@+id/textPreferences1"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="20sp"
+       	android:layout_marginTop="5sp"    	
+    	android:text="@string/help_Preferences_1"
+    	 />
+    
+    <!-- Update -->
+    <TextView
+       	android:id="@+id/textUpdate"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="25sp"
+       	android:layout_marginTop="15sp"
+       	android:textStyle="bold"     	
+    	android:text="@string/help_Update_0"
+    	 />
+    
+    <TextView
+       	android:id="@+id/textUpdate1"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="20sp"
+       	android:layout_marginTop="5sp"    	
+    	android:text="@string/help_Update_1"
+    	 />
+    
+    <!-- Footer -->
+    <TextView
+       	android:id="@+id/textFooter"
+       	android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:textSize="20sp"
+       	android:layout_marginTop="15sp"    	
+    	android:text="@string/help_footer"
+    	 />
+    
+    </LinearLayout>
+</ScrollView>
+

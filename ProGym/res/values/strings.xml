@@ -4,6 +4,7 @@
     <string name="app_name">Pro-Gym</string>
     <string name="action_settings">Settings</string>
     <string name="description">Enlarged Image</string>
+    <string name="placeholder">Placeholder</string>
 
     <!-- Activities: Utilities -->
     <string name="activity_utilities">Utilities</string>
@@ -24,8 +25,93 @@
     <string name="action_home">Home</string>
     <string name="action_help">Help</string>
     <string name="action_about">About</string>
+    <string name="action_preferences">Preferences</string>
+    <string name="action_update">Update</string>
     <string name="action_exit">Exit</string>
     
-
+    <!-- Activity: Help Screen -->
+    <!-- Bullet Point: &#8226; -->
+	<string name="help_header">Welcome to Pro-Gym: Fitness &amp; Workout Utility Application.</string>
+    <string name="help_Home_0">Home</string>
+    <string name="help_Workouts_0">Workouts</string>
+    <string name="help_Utilities_0">Utilities</string>
+    <string name="help_CalorieTracker_0">Calorie Tracker</string>
+	<string name="help_Run_0">Run</string>
+	<string name="help_Advice_0">Advice</string>
+	<string name="help_Preferences_0">Preferences</string>
+	<string name="help_Update_0">Update</string>
+	<string name="help_footer">Any problems or bugs can be e-mailed to the developed at: victorchow507@gmail.com.</string>
     
+	<string name="help_Home_1">
+	    &#8226; Select any of the categories: Workouts: Utilities, Calorie Tracker, Run, Advice to access their functionality.
+	    \n&#8226; Select the Home icon on the Action Bar to return to the Home Screen at any time.
+	    \n&#8226; Select the Menu icon on the Action Bar to view additional features.
+	</string>
+	    
+	<string name="help_Workouts_1">
+	    &#8226; Provies a category of workouts that can be completed without access to a gym.
+	    \n&#8226; Select any of the categories: Arms, Upper Body, Core, Legs or Cardio to view related workouts.
+	    \n&#8226; Select any of the workouts displayed to view more detailed information about the related workout.
+	</string>
+	
+	<string name="help_Utilities_1">
+		&#8226; Provides a selection of utilities that can be used to aid your fitness/workout routines.
+		\n&#8226; Select any of the categories: Timer, Stopwatch, Pedometer, Heartbeat Counter.    
+	
+		\n\n&#8226; <b>Timer:</b>
+		\n\t&#8226; Touch anywhere on the Hours/Minutes/Seconds to set the timer.
+		\n\t&#8226; Select the Reset button to reset the timer abck to 00:00:00.
+		\n\t&#8226; Select the Start button to start the timer countdown.
+		\n\t&#8226; Select the Stop button to stop the timer countdown.
+		
+		\n\n&#8226; <b>Stopwatch:</b>
+		\n\t&#8226; Touch anywhere on the Hours/Minutes/Seconds to set the stopwatch.
+		\n\t&#8226; Select the Reset button to reset the stopwatch back to 00:00:00.
+		\n\t&#8226; Select the Start button to start the stopwatch counter.
+		\n\t&#8226; Select the Stop butotn to stop the stopwatch counter.
+		\n\t&#8226; Select the Lap button to lap the stopwatch counter.
+		
+		\n\n&#8226; <b>Pedometer:</b>
+		\n\t&#8226; Select the Start button to start the Pedometer.
+		\n\t&#8226; The number of steps will be displayed on-screen.
+		\n\t&#8226; Select the Stop button to stop the Pedometer.
+		\n\t&#8226; Select the Reset butotn to reset the Pedometer back to 0 steps.
+		
+		\n\n&#8226; <b>Heartbeat Counter</b>
+		\n\t&#8226; Select the Start button to start the Heartbeat Counter.
+		\n\t&#8226; Place your finger on the Heartbeat sensor located on your device. (Varies on each device. Not all devices have this sensor.)
+		\n\t&#8226; The Heartbeat Counter will run for 6 seconds, then calculates your Heartbeats Per Minute (BPM).
+		\n\t&#8226; Select the Reset button to reset the Heartbeat Counter.
+		\n\t&#8226; There is a chart provided to measure your BPM against.
+	</string>
+	
+	<string name="help_CalorieTracker_1">
+		&#8226; TODO: Update
+	</string>
+	
+	<string name="help_Run_1">
+	    &#8226; Select the Start button to begin your run.
+	    \n&#8226; The GPS function must be enabled on your device.
+	    \n&#8226; The GPS function will track your location and calculate the distance travelled and average running speed.
+	</string>
+	
+	<string name="help_Advice_1">
+	    &#8226; Advice related to Workouts and general Fitness lifestyle will be displayed on-screen.
+	    \n&#8226; Cycle through advice by using the navigation buttons provided.
+	</string>
+	
+	<string name="help_Preferences_1">
+	    &#8226; Configure the settings of the application based on your preferences.
+	    \n\t&#8226; Enable Notifications.
+	    \n\t&#8226; Select Themes.
+	    \n\t&#8226; Select Alarm Sounds
+	    \n\t&#8226; Clear personal data stored on device.
+	    \n\t&#8226; Reset back to default preferences.
+	    \n\t&#8226; Save preferences and apply them.
+	</string>
+	
+	<string name="help_Update_1">
+	    &#8226; Visit the Google Playstore to check for new updates.
+	</string>
+	
 </resources>

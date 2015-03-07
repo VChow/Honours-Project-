@@ -112,6 +112,18 @@
             android:label="@string/action_about" >                      
         </activity>
         
+        <!-- Activity_Preferences -->
+        <activity
+            android:name="com.application.progym.activities.menubar.Activity_Preferences"
+            android:label="@string/action_preferences" >                      
+        </activity>
+        
+        <!-- Activity_Update -->
+        <activity
+            android:name="com.application.progym.activities.menubar.Activity_Update"
+            android:label="@string/action_update" >                      
+        </activity>
+        
     </application>
 
 </manifest>

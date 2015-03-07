@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,11 +29,11 @@ public class ImageAdapterWorkout_Arms extends BaseAdapter{
     public ImageAdapterWorkout_Arms(Context context, ArrayList<Store_Workout> workouts) {
         inflater = LayoutInflater.from(context);
 
-        addItems(workouts);
+        addItems(workouts, context);
     }
 
     //Adds new items to the grid based on the List of items.
-    public void addItems(ArrayList<Store_Workout> workouts)
+    public void addItems(ArrayList<Store_Workout> workouts, Context context)
     {
     	//Store_Workout workout = new Store_Workout();
     	
@@ -40,10 +41,22 @@ public class ImageAdapterWorkout_Arms extends BaseAdapter{
     	for(int i = 0; i < workouts.size(); i++)
     	{
     		String name = (workouts.get(i)).getName();
+    		String imagename = (workouts.get(i).getImage_paths().get(0));
+    		String final_imagename = "R.drawable." + imagename;
     		
-    		items.add(new Item(name, R.drawable.doge));
+    		//http://stackoverflow.com/questions/4427608/android-getting-resource-id-from-string
+    		//int resId=ImageAdapterWorkout_Arms.this.getResources().getIdentifier("ball_red", "drawable", ImageAdapterWorkout_Arms.this.getPackageName());
+    		
+    		//http://stackoverflow.com/questions/15488238/using-android-getidentifier
+    		int resourceID = context.getResources().getIdentifier(imagename, "drawable", context.getPackageName());
+    		Log.d("PD", "Imagename: " + imagename + " resourceID:" + resourceID);
+    		
+    		//items.add(new Item(name, R.drawable.doge));
+    		items.add(new Item(name, resourceID));
     	}
     }
+    
+  
     
     /* (non-Javadoc)
      * @see android.widget.Adapter#getCount()

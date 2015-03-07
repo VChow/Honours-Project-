@@ -47,7 +47,13 @@ public class Activity_About extends Activity{
 			return true;		
 		case (R.id.action_about):
 			this.startActivity(new Intent(this, Activity_About.class));
-			return true;		
+			return true;	
+		case (R.id.action_preferences):
+			this.startActivity(new Intent(this, Activity_Preferences.class));
+			return true;
+		case (R.id.action_update):
+			this.startActivity(new Intent(this, Activity_Update.class));
+			return true;
 		case (R.id.action_exit):
 			Intent intent = new Intent(Intent.ACTION_MAIN); 
 	    	intent.addCategory(Intent.CATEGORY_HOME);

@@ -1,10 +1,6 @@
-package com.application.progym.activities;
+package com.application.progym.activities.menubar;
 
 import com.application.progym.R;
-import com.application.progym.activities.menubar.Activity_About;
-import com.application.progym.activities.menubar.Activity_Help;
-import com.application.progym.activities.menubar.Activity_Preferences;
-import com.application.progym.activities.menubar.Activity_Update;
 import com.application.progym.utilities.Utilities;
 
 import android.app.Activity;
@@ -14,35 +10,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewConfiguration;
 
-/**
- * Handles the Pedometer functionality.
- *
- */
-public class Activity_Utility_Pedometer extends Activity{
-	
+public class Activity_Update extends Activity{
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_utility_pedometer);
+		setContentView(R.layout.activity_update);
 		
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
-
-	}  
+	}
 	
-	/**
-	 * Creates the Menu Bar.
-	 * 
-	 * (non-Javadoc)
-	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
-	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	
 	/**
 	 * Event Handlers for Menu Bar.
 	 * 
@@ -65,7 +50,7 @@ public class Activity_Utility_Pedometer extends Activity{
 			return true;
 		case (R.id.action_update):
 			this.startActivity(new Intent(this, Activity_Update.class));
-			return true;
+			return true;	
 		case (R.id.action_exit):
 			Intent intent = new Intent(Intent.ACTION_MAIN); 
 	    	intent.addCategory(Intent.CATEGORY_HOME);
