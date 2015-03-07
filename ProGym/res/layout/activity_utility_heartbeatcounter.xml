@@ -52,17 +52,70 @@
         	android:layout_centerHorizontal="true"
         	android:layout_below="@+id/textBPM"
         	android:layout_marginTop="25dp"
+        	android:layout_marginBottom="25dp"
+        />
+    
+    <View
+            style="@style/Divider"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/buttonStartRecord"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
+    
+    <TextView
+        android:id="@+id/textResting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:text="Resting Heart Rate Chart:"
+        	android:layout_below="@+id/buttonStartRecord"
+        	android:layout_alignParentLeft="true"
+        	android:layout_marginTop="25dp"
+        	android:layout_marginLeft="20dp"
         />
     
     <ImageView 
-        android:id="@+id/imageHeartRateChart"
-        android:layout_width="wrap_content"
+        android:id="@+id/imageResting"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/doge"
         	android:layout_centerHorizontal="true"
-        	android:layout_below="@+id/buttonStartRecord"
-        	android:layout_marginTop="25dp"
+        	android:layout_below="@+id/textResting"
+        	android:layout_marginTop="10dp"
         />
   
+    <View
+            style="@style/Divider"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/imageResting"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
+    
+    <TextView
+        android:id="@+id/textMaximum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:text="Maximum Heart Rate Chart:"
+        	android:layout_below="@+id/imageResting"
+        	android:layout_alignParentLeft="true"
+        	android:layout_marginTop="25dp"
+        	android:layout_marginLeft="20dp"
+        />
+    
+    <ImageView 
+        android:id="@+id/imageMaximum"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/doge2"
+        	android:layout_centerHorizontal="true"
+        	android:layout_below="@+id/textMaximum"
+        	android:layout_marginTop="10dp"
+        />
+    
     </RelativeLayout>
 </ScrollView>
