@@ -105,20 +105,21 @@ public class Activity_Home extends Activity {
 					Intent intentUtilities = new Intent(getApplicationContext(),Activity_Utilities.class);
 					startActivity(intentUtilities);
 				}
-				else if(position == 2) //Run?
+				else if(position == 2) //Calorie Counter
 				{
-					//Intent intentRun = new Intent(getApplicationContext(),Activity_Run.class);
-					//startActivity(intentRun);
+					Intent intentCalorie = new Intent(getApplicationContext(),Activity_CalorieCounter.class);
+					startActivity(intentCalorie);
+					
 				}
-				else if(position == 3) //Calorie Counter?
+				else if(position == 3) //Run
 				{
-					//Intent intentCalorie = new Intent(getApplicationContext(),Activity_Calorie.class);
-					//startActivity(intentCalorie);
+					Intent intentRun = new Intent(getApplicationContext(),Activity_Run.class);
+					startActivity(intentRun);
 				}
-				else if(position == 4) //Graphs?
+				else if(position == 4) //Advice
 				{
-					//Intent intentGraphs = new Intent(getApplicationContext(),Activity_Graphs.class);
-					//startActivity(intentGraphs);
+					Intent intentAdvice = new Intent(getApplicationContext(),Activity_Advice.class);
+					startActivity(intentAdvice);
 				}
 			}
 		});

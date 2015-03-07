@@ -29,13 +29,7 @@
         </activity>
         
         <!-- ==========================  Activities: Utilities ========================== -->
-        
-        <!-- Activity_Utilities -->
-        <activity
-            android:name="com.application.progym.activities.Activity_Utilities"
-            android:label="@string/activity_utilities" >                      
-        </activity>
-        
+         
         <!-- Activity_Utility_HeartbeatCounter -->
         <activity
             android:name="com.application.progym.activities.Activity_Utility_HeartbeatCounter"
@@ -61,13 +55,7 @@
         </activity>
         
         <!-- ==========================  Activities: Workouts ========================== -->
-        
-        <!-- Activity_Workouts -->
-        <activity
-            android:name="com.application.progym.activities.Activity_Workouts"
-            android:label="@string/activity_workouts" >                      
-        </activity>
-        
+
         <!-- Activity_Workout_Arms -->
         <activity
             android:name="com.application.progym.activities.Activity_Workout_Arms"
@@ -96,6 +84,38 @@
         <activity
             android:name="com.application.progym.activities.Activity_Workout_Cardio"
             android:label="@string/activity_workout_cardio" >                      
+        </activity>
+        
+        <!-- ========================= Home Screen Activities =======================  -->
+        
+        <!-- Activity_Workouts -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Workouts"
+            android:label="@string/activity_workouts" >                      
+        </activity>
+        
+        <!-- Activity_Utilities -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Utilities"
+            android:label="@string/activity_utilities" >                      
+        </activity>
+        
+        <!-- Activity_CalorieCounter -->
+        <activity
+            android:name="com.application.progym.activities.Activity_CalorieCounter"
+            android:label="@string/activity_calorie_counter" >                      
+        </activity>
+        
+        <!-- Activity_Run -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Run"
+            android:label="@string/activity_run" >                      
+        </activity>
+        
+        <!-- Activity_Advice -->
+        <activity
+            android:name="com.application.progym.activities.Activity_Advice"
+            android:label="@string/activity_advice" >                      
         </activity>
         
         <!-- ========================== Menu Bar Activities ========================== -->

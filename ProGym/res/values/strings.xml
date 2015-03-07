@@ -6,15 +6,20 @@
     <string name="description">Enlarged Image</string>
     <string name="placeholder">Placeholder</string>
 
-    <!-- Activities: Utilities -->
+    <!-- Activities: Home Screen -->
+    <string name="activity_workouts">Workouts</string>
     <string name="activity_utilities">Utilities</string>
+    <string name="activity_advice">Advice</string>
+    <string name="activity_calorie_counter">Calorie Counter</string>
+    <string name="activity_run">Run</string>
+    
+    <!-- Activities: Utilities -->  
     <string name="activity_utility_heartbeatcounter">Heartbeat Counter</string>
     <string name="activity_utility_pedometer">Pedometer</string>
     <string name="activity_utility_stopwatch">Stopwatch</string>
     <string name="activity_utility_timer">Timer</string>
     
-    <!-- Activities: Workouts -->
-    <string name="activity_workouts">Workouts</string>
+    <!-- Activities: Workouts -->    
     <string name="activity_workout_arms">Arms</string>
     <string name="activity_workout_core">Core</string>
     <string name="activity_workout_legs">Legs</string>

@@ -1,14 +1,20 @@
-package com.application.progym.activities.menubar;
-
-import com.application.progym.R;
-import com.application.progym.utilities.Utilities;
+package com.application.progym.activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewConfiguration;
+import android.widget.TextView;
+
+import com.application.progym.R;
+import com.application.progym.activities.menubar.Activity_About;
+import com.application.progym.activities.menubar.Activity_Help;
+import com.application.progym.activities.menubar.Activity_Preferences;
+import com.application.progym.activities.menubar.Activity_Update;
+import com.application.progym.utilities.Utilities;
 
 /**
  * Displays the Advice page:
@@ -16,15 +22,31 @@ import android.view.ViewConfiguration;
  */
 public class Activity_Advice extends Activity{
 	
+	TextView textAdvice;
+	 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_home); //Create new layout xml
+		setContentView(R.layout.activity_advice); //Create new layout xml
 		
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
 
+		//Instantiate textview locally.
+		textAdvice = (TextView) findViewById(R.id.textAdvice);
+		
+		generateAdvice(getCurrentFocus());
 	}  
+	
+	public void generateAdvice(View view)
+	{
+		String advice = "TEST";
+		//TODO
+		//Create a store with advice strings.
+		//Generate random number and pull a random string to display.
+		
+		textAdvice.setText(advice);
+	}
 	
 	/**
 	 * Creates the Menu Bar.
