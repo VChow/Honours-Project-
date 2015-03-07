@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="15dp" >
+        android:layout_margin="15dp"
+        android:layout_marginBottom="50dp" >
     
     <!-- Header -->	
     <TextView
@@ -18,7 +19,13 @@
        	android:layout_height="wrap_content"
        	android:textSize="20sp"
     	android:text="@string/help_header"
+    	android:layout_marginBottom="10dp"
     	 />
+    
+    <View
+        style="@style/Divider"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
     
     <!-- Home -->
     <TextView
@@ -41,6 +48,11 @@
     	android:text="@string/help_Home_1"
     	 />
     
+    <View
+        style="@style/Divider"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
+    
     <!-- Workouts -->
     <TextView
        	android:id="@+id/textWorkouts"
@@ -60,6 +72,11 @@
        	android:layout_marginTop="5sp"    	
     	android:text="@string/help_Workouts_1"
     	 />
+    
+    <View
+        style="@style/Divider"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
     
     <!-- Utilities -->
     <TextView
@@ -82,6 +99,11 @@
     	android:text="@string/help_Utilities_1"
     	 />
     
+    <View
+        style="@style/Divider"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
+    
     <!-- Calorie Tracker -->
     <TextView
        	android:id="@+id/textCalorieTracker"
@@ -101,6 +123,11 @@
        	android:layout_marginTop="5sp"    	
     	android:text="@string/help_CalorieTracker_1"
     	 />
+    
+    <View
+        style="@style/Divider"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
     
     <!-- Run -->
     <TextView
@@ -122,6 +149,11 @@
     	android:text="@string/help_Run_1"
     	 />
     
+    <View
+        style="@style/Divider"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
+    
     <!-- Advice -->
     <TextView
        	android:id="@+id/textAdvice"
@@ -141,6 +173,11 @@
        	android:layout_marginTop="5sp"    	
     	android:text="@string/help_Advice_1"
     	 />
+    
+    <View
+        style="@style/Divider"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
     
     <!-- Preferences -->
     <TextView
@@ -162,6 +199,11 @@
     	android:text="@string/help_Preferences_1"
     	 />
     
+    <View
+        style="@style/Divider"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
+    
     <!-- Update -->
     <TextView
        	android:id="@+id/textUpdate"
@@ -182,13 +224,19 @@
     	android:text="@string/help_Update_1"
     	 />
     
+    <View
+        style="@style/Divider"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp" />
+    
     <!-- Footer -->
     <TextView
        	android:id="@+id/textFooter"
        	android:layout_width="wrap_content"
        	android:layout_height="wrap_content"
        	android:textSize="20sp"
-       	android:layout_marginTop="15sp"    	
+       	android:layout_marginTop="15sp" 
+       	android:layout_marginBottom="50sp"   	
     	android:text="@string/help_footer"
     	 />
     
