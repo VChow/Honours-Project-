@@ -1,6 +1,7 @@
 package com.application.progym.activities.menubar;
 
 import com.application.progym.R;
+import com.application.progym.activities.Activity_Home;
 import com.application.progym.utilities.Utilities;
 
 import android.app.Activity;
@@ -68,6 +69,10 @@ public class Activity_Update extends Activity{
 	{		
 		switch (item.getItemId())
 		{
+		case (R.id.action_home):
+			finish();
+			this.startActivity(new Intent(this, Activity_Home.class));
+			return true;
 		case (R.id.action_help):
 			this.startActivity(new Intent(this, Activity_Help.class));
 			return true;

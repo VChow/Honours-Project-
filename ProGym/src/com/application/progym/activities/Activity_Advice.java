@@ -15,7 +15,7 @@ import com.application.progym.activities.menubar.Activity_Help;
 import com.application.progym.activities.menubar.Activity_Preferences;
 import com.application.progym.activities.menubar.Activity_Update;
 import com.application.progym.utilities.Utilities;
-
+ 
 /**
  * Displays the Advice page:
  * Random facts?
@@ -23,7 +23,7 @@ import com.application.progym.utilities.Utilities;
 public class Activity_Advice extends Activity{
 	
 	TextView textAdvice;
-	 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -72,6 +72,10 @@ public class Activity_Advice extends Activity{
 	{		
 		switch (item.getItemId())
 		{
+		case (R.id.action_home):
+			finish();
+			this.startActivity(new Intent(this, Activity_Home.class));
+			return true;
 		case (R.id.action_help):
 			this.startActivity(new Intent(this, Activity_Help.class));
 			return true;

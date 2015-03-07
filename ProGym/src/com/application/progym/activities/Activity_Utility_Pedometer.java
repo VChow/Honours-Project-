@@ -54,6 +54,10 @@ public class Activity_Utility_Pedometer extends Activity{
 	{		
 		switch (item.getItemId())
 		{
+		case (R.id.action_home):
+			finish();
+			this.startActivity(new Intent(this, Activity_Home.class));
+			return true;
 		case (R.id.action_help):
 			this.startActivity(new Intent(this, Activity_Help.class));
 			return true;
