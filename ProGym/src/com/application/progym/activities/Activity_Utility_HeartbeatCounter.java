@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.Button;
 
@@ -23,7 +24,7 @@ import com.application.progym.utilities.Utilities;
  */
 public class Activity_Utility_HeartbeatCounter extends Activity{
 	
-	Button buttonStart;
+	Button buttonRecord;
 	int buttonState;
 	
 	@Override
@@ -35,7 +36,7 @@ public class Activity_Utility_HeartbeatCounter extends Activity{
 		Utilities.disableHardwareMenuKey(config);
 
 		//Instantiate button
-		buttonStart = (Button) findViewById(R.id.buttonStartRecord);
+		buttonRecord = (Button) findViewById(R.id.buttonStartRecord);
 		
 		//Initialise variables
 		buttonState = 0; //0 = Stopped, 1 = Reset
@@ -44,7 +45,7 @@ public class Activity_Utility_HeartbeatCounter extends Activity{
 	/**
 	 * Display instructions to user and record BPM.
 	 */
-	public void buttonStart()
+	public void buttonStartRecord(View view)
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage("Place your thumb over the Heartbeat Sensor and do not remove until it is finished.")
@@ -52,7 +53,7 @@ public class Activity_Utility_HeartbeatCounter extends Activity{
 			   .setPositiveButton("Ok", new DialogInterface.OnClickListener()
 			   {
 				   public void onClick(DialogInterface dialog, int which) {
-					   record();
+					   //record();
 				   }
 			   })
 			   .setIcon(android.R.drawable.ic_dialog_alert)
