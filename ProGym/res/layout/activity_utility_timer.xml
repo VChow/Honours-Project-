@@ -1,8 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
+    <!-- Start of Textviews - Timer  -->
+    <TextView
+        android:id="@+id/textHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="00"
+        android:textSize="75sp"
+        android:textColor="#FFFFFF"
+        android:background="#202020"
+        android:minWidth="110dp"
+        android:minHeight="200dp"       	
+        	android:layout_alignParentLeft="true"
+        	android:layout_marginLeft="10dp"
+        	android:layout_marginRight="5dp"
+        	android:layout_marginTop="10dp"
+        	android:layout_marginBottom="5dp"
+        />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textMinutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="00"
+        android:textSize="75sp"
+        android:textColor="#FFFFFF"
+        android:background="#202020"
+        android:minWidth="110dp"
+        android:minHeight="200dp"
+        	android:layout_centerHorizontal="true"
+        	android:layout_marginLeft="5dp"
+        	android:layout_marginRight="5dp"
+        	android:layout_marginTop="10dp"
+        	android:layout_marginBottom="5dp"
+        />
+    
+    <TextView
+        android:id="@+id/textSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="00"
+        android:textSize="75sp"
+        android:textColor="#FFFFFF"
+        android:background="#202020"
+        android:minWidth="110dp"
+        android:minHeight="200dp"
+        	android:layout_alignParentRight="true"
+        	android:layout_marginLeft="5dp"
+        	android:layout_marginRight="10dp"
+        	android:layout_marginTop="10dp"
+        	android:layout_marginBottom="5dp"
+        />
+    <!-- End of Textviews - Timer  -->
+    
+    
+    
+    <!-- Start of Textviews - Labels  -->
+    <TextView
+        android:id="@+id/labelHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="110dp"
+        android:text="Hours"
+        android:textColor="#FFFFFF"
+        android:background="#202020"
+        android:textSize="20sp"   
+        	android:layout_below="@+id/textHours"
+        	android:layout_alignLeft="@+id/textHours"
+        
+        />
+    
+    <TextView
+        android:id="@+id/labelMinutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="110dp"
+        android:text="Minutes"
+        android:textColor="#FFFFFF"
+        android:background="#202020"
+        android:textSize="20sp"
+        	android:layout_below="@+id/textHours"
+        	android:layout_alignLeft="@+id/textMinutes"
+        />
+    
+    <TextView
+        android:id="@+id/labelSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="110dp"
+        android:text="Seconds"
+        android:textColor="#FFFFFF"
+        android:background="#202020"
+        android:textSize="20sp"
+        	android:layout_below="@+id/textHours"
+        	android:layout_alignLeft="@+id/textSeconds"
+        />
+    
+    <!-- End of Textviews - Timer  -->
+    
+    
+    
+    <!-- Start of Buttons -->
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RESET"
+        android:minWidth="160dp" 
+        android:layout_marginTop="15dp"
+        android:textColor="#FFFFFF"
+        android:background="#404040"
+        android:onClick="buttonReset"
+        	android:layout_alignLeft="@+id/textHours"
+        	android:layout_below="@+id/labelHours"
+        />
+    
+    <Button
+        android:id="@+id/buttonStartStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="START" 
+        android:minWidth="160dp"     
+        android:layout_marginTop="15dp" 
+        android:textColor="#FFFFFF"
+        android:background="#404040"
+        android:onClick="buttonStartStop"
+        	android:layout_alignRight="@+id/textSeconds"
+        	android:layout_below="@+id/labelHours"      	
+        />
+    
+    
+    <!-- End of Buttons -->
+</RelativeLayout>

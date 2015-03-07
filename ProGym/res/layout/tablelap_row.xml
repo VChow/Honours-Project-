@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+    	android:id="@+id/textLapCounter"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:minWidth="100dp"
+    	android:textColor="#FFFFFF"
+        android:background="#404040"
+        android:textSize="20sp"
+    	android:text="Test Lap 1" 
+    	android:gravity="center"
+    	android:layout_alignParentLeft="true"   
+        />
+    
+    <TextView
+        android:id="@+id/textCurrentCounter"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:minWidth="100dp"
+    	android:textColor="#FFFFFF"
+        android:background="#404040"
+        android:textSize="20sp"
+    	android:text="01:25:46"  
+    	android:gravity="center"
+    	android:layout_centerHorizontal="true"
+        />
+    
+    <TextView
+        android:id="@+id/textDifferenceCounter"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:minWidth="100dp" 
+    	android:textColor="#FFFFFF"
+        android:background="#404040"
+        android:textSize="20sp"
+    	android:text="05:45:23" 
+    	android:gravity="center" 
+    	android:layout_alignParentRight="true"
+        />
+
+</TableRow>

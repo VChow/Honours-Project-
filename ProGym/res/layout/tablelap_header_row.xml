@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+    	android:id="@+id/textLapCounter"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:minWidth="110dp"
+    	android:textColor="#FFFFFF"
+        android:background="#404040"
+        android:textSize="20sp"
+        android:textStyle="bold"
+    	android:text="Lap" 
+    	android:gravity="center"
+    	android:layout_gravity="left"
+        />
+    
+    <TextView
+        android:id="@+id/textCurrentCounter"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:minWidth="110dp"
+    	android:textColor="#FFFFFF"
+        android:background="#404040"
+        android:textSize="20sp"
+        android:textStyle="bold"
+    	android:text="Time"
+    	android:gravity="center"
+    	android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/textDifferenceCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="110dp"
+        android:background="#404040"      
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Difference"
+        android:gravity="center" 
+		android:layout_gravity="right"
+        />
+    
+</TableRow>
