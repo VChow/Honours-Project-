@@ -1,18 +1,25 @@
 package com.application.progym.activities.menubar;
 
-import com.application.progym.R;
-import com.application.progym.activities.Activity_Home;
-import com.application.progym.utilities.Utilities;
-
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewConfiguration;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.application.progym.R;
+import com.application.progym.activities.Activity_Home;
+import com.application.progym.utilities.Utilities;
 
 public class Activity_Preferences extends Activity{
 
+	Button buttonClearData, buttonResetPreferences;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -20,6 +27,60 @@ public class Activity_Preferences extends Activity{
 		
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
+		
+		//Instantiate buttons
+		buttonClearData = (Button) findViewById(R.id.buttonClearData);
+		buttonResetPreferences = (Button) findViewById(R.id.buttonResetPreferences);
+	}
+	
+	/**
+	 * Called when buttonClearData is clicked.
+	 * @param view
+	 */
+	public void clearData(View view)
+	{
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Are you sure you wish to clear all stored data on the device? This cannot be undone.")
+			   .setTitle("Clear Data")
+			   .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+			   {
+				   public void onClick(DialogInterface dialog, int which) {
+					   Toast.makeText(getApplicationContext(), "Data cleared", Toast.LENGTH_LONG).show();
+				   }
+			   })
+			   .setNegativeButton("No", new DialogInterface.OnClickListener()
+			   {
+				   public void onClick(DialogInterface dialog, int which) {
+					   //Do nothing.
+				   }
+			   })
+			   .setIcon(android.R.drawable.ic_dialog_alert)
+			   .show();
+	}
+	
+	/**
+	 * Called when buttonResetPreferences is clicked.
+	 * @param view
+	 */
+	public void resetPreferences(View view)
+	{
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Are you sure you wish to reset back to default preferences?")
+			   .setTitle("Reset Preferences")
+			   .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+			   {
+				   public void onClick(DialogInterface dialog, int which) {
+					   Toast.makeText(getApplicationContext(), "Preferences reset.", Toast.LENGTH_LONG).show();
+				   }
+			   })
+			   .setNegativeButton("No", new DialogInterface.OnClickListener()
+			   {
+				   public void onClick(DialogInterface dialog, int which) {
+					   //Do nothing.
+				   }
+			   })
+			   .setIcon(android.R.drawable.ic_dialog_alert)
+			   .show();
 	}
 	
 	@Override

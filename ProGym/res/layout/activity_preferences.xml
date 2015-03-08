@@ -1,8 +1,358 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content" >
+	
+<RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_marginBottom="50dp"
+    android:orientation="vertical"  >
     
-
-</LinearLayout>
+    <!--============== Label: Notifications ===========-->
+    <TextView 
+        android:id="@+id/labelNotifications"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Notifications"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/text_border"
+        />
+    
+    <!-- Notifications -->
+    <TextView
+        android:id="@+id/textNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"        
+        android:text="Notifications"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="20dp"
+        	android:layout_marginLeft="30dp"
+        	android:layout_alignParentLeft="true"
+        	android:layout_below="@+id/labelNotifications"
+        />
+    
+    <Switch
+        android:id="@+id/switchNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="20dp"
+        	android:layout_marginRight="30dp"
+        	android:layout_alignParentRight="true"   
+        	android:layout_below="@+id/labelNotifications"
+        />
+    
+    		<View
+            	style="@style/Divider"
+            	android:layout_alignParentLeft="true"
+            	android:layout_marginTop="0dp"
+            	android:layout_marginBottom="0dp"
+            	android:layout_below="@+id/textNotifications" />
+    
+    <!-- Notification Tone -->
+    <TextView
+        android:id="@+id/textNotificationTone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"       
+        android:text="Notification Tone"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="20dp"
+        	android:layout_below="@+id/textNotifications"
+        	android:layout_alignLeft="@+id/textNotifications"
+        />
+    
+    <Spinner
+        android:id="@+id/spinnerNotificationTone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/NotificationTones"
+        	android:layout_marginRight="30dp"
+        	android:layout_alignParentRight="true"   
+        	android:layout_below="@+id/switchNotifications"
+        	android:layout_alignLeft="@+id/switchNotifications"
+        	android:layout_alignTop="@+id/textNotificationTone"
+        />
+    
+    		<View
+            	style="@style/Divider"
+            	android:layout_alignParentLeft="true"
+            	android:layout_marginTop="0dp"
+            	android:layout_marginBottom="0dp"
+            	android:layout_below="@+id/textNotificationTone" />
+    
+    <!-- Banners -->
+    <TextView
+        android:id="@+id/textBanners"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"     
+        android:text="Notification Banners"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="20dp"
+        	android:layout_below="@+id/textNotificationTone"
+        	android:layout_alignLeft="@+id/textNotifications"
+        />
+    
+    <Switch
+        android:id="@+id/switchBanners"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        	android:layout_marginRight="30dp"
+        	android:layout_alignParentRight="true"   
+        	android:layout_alignLeft="@+id/switchNotifications"
+        	android:layout_below="@+id/spinnerNotificationTone"
+        	android:layout_alignTop="@+id/textBanners"
+        />
+    
+    		<View
+            	style="@style/Divider"
+            	android:layout_alignParentLeft="true"
+            	android:layout_marginTop="0dp"
+            	android:layout_marginBottom="0dp"
+            	android:layout_below="@+id/textBanners" />
+    
+    <!--================ Label: Alarms ================-->
+    <TextView 
+        android:id="@+id/labelAlarms"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Alarms"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/text_border"
+        	android:layout_below="@+id/textBanners"
+        />
+    
+    <!-- Alarm Type -->
+    <TextView
+        android:id="@+id/textAlarmType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"        
+        android:text="Alarm Type"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="20dp"
+        	android:layout_below="@+id/labelAlarms"
+        	android:layout_alignLeft="@+id/textNotifications"
+        />
+    
+    <Spinner
+        android:id="@+id/spinnerAlarmType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/AlarmTypes"
+        	android:layout_marginRight="30dp"
+        	android:layout_alignParentRight="true"   
+        	android:layout_below="@+id/labelAlarms"
+        	android:layout_alignLeft="@+id/switchNotifications"
+        	android:layout_alignTop="@+id/textAlarmType"
+        />
+    
+    		<View
+            	style="@style/Divider"
+            	android:layout_alignParentLeft="true"
+            	android:layout_marginTop="0dp"
+            	android:layout_marginBottom="0dp"
+            	android:layout_below="@+id/textAlarmType" />
+    
+    <!-- Alarm Tone -->		
+    <TextView
+        android:id="@+id/textAlarmTone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"        
+        android:text="Alarm Tone"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="20dp"
+        	android:layout_below="@+id/textAlarmType"
+        	android:layout_alignLeft="@+id/textNotifications"
+        />				
+    
+    <Spinner
+        android:id="@+id/spinnerAlarmTone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/AlarmTones"
+        	android:layout_marginRight="30dp"
+        	android:layout_alignParentRight="true"   
+        	android:layout_below="@+id/textAlarmType"
+        	android:layout_alignLeft="@+id/switchNotifications"
+        	android:layout_alignTop="@+id/textAlarmTone"
+        />
+    
+    		<View
+            	style="@style/Divider"
+            	android:layout_alignParentLeft="true"
+            	android:layout_marginTop="0dp"
+            	android:layout_marginBottom="0dp"
+            	android:layout_below="@+id/textAlarmTone" />
+    
+    <!--================ Label: General Appearance ================-->
+    <TextView 
+        android:id="@+id/labelGeneralAppearance"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="General Appearance"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/text_border"
+        	android:layout_below="@+id/textAlarmTone"
+        />
+    
+    <!-- Theme -->		
+    <TextView
+        android:id="@+id/textTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"        
+        android:text="Theme"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="20dp"
+        	android:layout_below="@+id/labelGeneralAppearance"
+        	android:layout_alignLeft="@+id/textNotifications"
+        />
+    
+    <Spinner
+        android:id="@+id/spinnerTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/Themes"
+        	android:layout_marginRight="30dp"
+        	android:layout_alignParentRight="true"   
+        	android:layout_below="@+id/labelGeneralAppearance"
+        	android:layout_alignLeft="@+id/switchNotifications"
+        	android:layout_alignTop="@+id/textTheme"
+        />	
+    
+    		<View
+            	style="@style/Divider"
+            	android:layout_alignParentLeft="true"
+            	android:layout_marginTop="0dp"
+            	android:layout_marginBottom="0dp"
+            	android:layout_below="@+id/textTheme" />
+    
+    <!-- Font Size -->		
+    <TextView
+        android:id="@+id/textFontSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"       
+        android:text="Font Size"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="20dp"
+        	android:layout_below="@+id/textTheme"
+        	android:layout_alignLeft="@+id/textNotifications"
+        />
+    
+    <Spinner
+        android:id="@+id/spinnerFontSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/FontSizes"
+        	android:layout_marginRight="30dp"
+        	android:layout_alignParentRight="true"   
+        	android:layout_below="@+id/textTheme"
+        	android:layout_alignLeft="@+id/switchNotifications"
+        	android:layout_alignTop="@+id/textFontSize"
+        />	
+    
+    		<View
+            	style="@style/Divider"
+            	android:layout_alignParentLeft="true"
+            	android:layout_marginTop="0dp"
+            	android:layout_marginBottom="0dp"
+            	android:layout_below="@+id/textFontSize" />
+    
+    <!--================ Label: Other ================-->
+    <TextView 
+        android:id="@+id/labelOther"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Other"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/text_border"
+        	android:layout_below="@+id/textFontSize"
+        />
+    
+    <!-- Clear Stored Data -->		
+    <TextView
+        android:id="@+id/textClearData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"       
+        android:text="Clear Stored Data"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="20dp"
+        	android:layout_below="@+id/labelOther"
+        	android:layout_alignLeft="@+id/textNotifications"
+        />
+    
+    <Button
+        android:id="@+id/buttonClearData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:gravity="center"
+        android:onClick="clearData"
+        	android:layout_marginRight="30dp"
+        	android:layout_marginTop="8dp"
+        	android:layout_alignParentRight="true"   
+        	android:layout_below="@+id/labelOther"
+        	android:layout_alignLeft="@+id/switchNotifications"  	
+        />	
+    
+    		<View
+            	style="@style/Divider"
+            	android:layout_alignParentLeft="true"
+            	android:layout_marginTop="0dp"
+            	android:layout_marginBottom="0dp"
+            	android:layout_below="@+id/textClearData" />
+    
+    <!-- Reset Preferences -->		
+    <TextView
+        android:id="@+id/textResetPreferences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"        
+        android:text="Reset Preferences"
+        	android:layout_marginTop="20dp"
+        	android:layout_marginBottom="20dp"
+        	android:layout_below="@+id/textClearData"
+        	android:layout_alignLeft="@+id/textNotifications"
+        />
+    
+    <Button
+        android:id="@+id/buttonResetPreferences"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:gravity="center"
+        android:onClick="resetPreferences"
+        	android:layout_marginRight="30dp"
+        	android:layout_marginTop="8dp"
+        	android:layout_alignParentRight="true"   
+        	android:layout_below="@+id/textClearData"
+        	android:layout_alignLeft="@+id/switchNotifications"  	
+        />	
+    
+    		<View
+            	style="@style/Divider"
+            	android:layout_alignParentLeft="true"
+            	android:layout_marginTop="0dp"
+            	android:layout_marginBottom="0dp"
+            	android:layout_below="@+id/textResetPreferences" />
+    			
+	</RelativeLayout>
+</ScrollView>

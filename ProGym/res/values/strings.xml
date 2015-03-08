@@ -37,6 +37,44 @@
     <!-- Activity: Update Screen -->
     <string name="update"></string>
     
+    <!-- Activity: Preferences Screen -->
+    <string-array name="NotificationTones">		
+		<item>Beep Once</item>
+		<item>Bubbles</item>
+		<item>Knock</item>
+		<item>Postman</item>
+		<item>Pure Bell</item>
+		<item>Silent</item>
+		<item>Whistle</item>
+	</string-array>
+    
+    <string-array name="AlarmTypes">
+        <item>Melody</item>
+        <item>Vibration</item>
+        <item>Vibration and Melody</item>
+   		<item>Silent</item>
+    </string-array>
+    
+    <string-array name="AlarmTones">
+		<item>Basic Tone</item>
+		<item>Beep Once</item>
+		<item>Beep Beep</item>
+		<item>Chime</item>
+		<item>Postman</item>
+		<item>Silent</item>
+	</string-array>  
+    
+    <string-array name="Themes">
+		<item>Light</item>
+		<item>Dark</item>
+	</string-array>
+	
+    <string-array name="FontSizes">
+		<item>Small</item>
+		<item>Normal</item>
+		<item>Large</item>
+	</string-array>
+    
     <!-- Activity: About Screen -->
     <string name="about">
         &#8226; Pro-Gym is a Fitness &amp; Workout Utility Android Application.
