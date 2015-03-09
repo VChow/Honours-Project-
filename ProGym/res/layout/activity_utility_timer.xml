@@ -5,7 +5,7 @@
     android:orientation="vertical" >
     
     <!-- Start of Textviews - Timer  -->
-    <TextView
+    <EditText
         android:id="@+id/textHours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +15,9 @@
         android:textColor="#FFFFFF"
         android:background="#202020"
         android:minWidth="110dp"
-        android:minHeight="200dp"       	
+        android:minHeight="200dp"
+        android:inputType="number"  
+        android:maxLength="2"     	
         	android:layout_alignParentLeft="true"
         	android:layout_marginLeft="10dp"
         	android:layout_marginRight="5dp"
@@ -23,7 +25,7 @@
         	android:layout_marginBottom="5dp"
         />
 
-    <TextView
+    <EditText
         android:id="@+id/textMinutes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,6 +36,8 @@
         android:background="#202020"
         android:minWidth="110dp"
         android:minHeight="200dp"
+        android:inputType="number" 
+        android:maxLength="2"
         	android:layout_centerHorizontal="true"
         	android:layout_marginLeft="5dp"
         	android:layout_marginRight="5dp"
@@ -41,7 +45,7 @@
         	android:layout_marginBottom="5dp"
         />
     
-    <TextView
+    <EditText
         android:id="@+id/textSeconds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,6 +56,8 @@
         android:background="#202020"
         android:minWidth="110dp"
         android:minHeight="200dp"
+        android:inputType="number"
+        android:maxLength="2" 
         	android:layout_alignParentRight="true"
         	android:layout_marginLeft="5dp"
         	android:layout_marginRight="10dp"
@@ -112,7 +118,7 @@
     
     <!-- Start of Buttons -->
     <Button
-        android:id="@+id/buttonReset"
+        android:id="@+id/buttonResetTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RESET"
@@ -120,13 +126,13 @@
         android:layout_marginTop="15dp"
         android:textColor="#FFFFFF"
         android:background="#404040"
-        android:onClick="buttonReset"
+        android:onClick="resetTimer"
         	android:layout_alignLeft="@+id/textHours"
         	android:layout_below="@+id/labelHours"
         />
     
     <Button
-        android:id="@+id/buttonStartStop"
+        android:id="@+id/buttonStartTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="START" 
@@ -134,11 +140,37 @@
         android:layout_marginTop="15dp" 
         android:textColor="#FFFFFF"
         android:background="#404040"
-        android:onClick="buttonStartStop"
+        android:onClick="startTimer"
         	android:layout_alignRight="@+id/textSeconds"
         	android:layout_below="@+id/labelHours"      	
         />
     
+    <Button
+        android:id="@+id/buttonStopTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP" 
+        android:minWidth="160dp"     
+        android:layout_marginTop="15dp" 
+        android:textColor="#FFFFFF"
+        android:background="#404040"
+        android:onClick="stopTimer"
+        android:visibility="invisible"
+        	android:layout_alignRight="@+id/textSeconds"
+        	android:layout_below="@+id/labelHours"      	
+        />
     
     <!-- End of Buttons -->
+    
+    <TextView
+        android:id="@+id/textTestTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="For Testing Purposes"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        	android:layout_marginTop="25dp"
+        	android:layout_below="@+id/buttonResetTimer"
+        />
+    	
 </RelativeLayout>

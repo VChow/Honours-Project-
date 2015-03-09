@@ -2,11 +2,16 @@ package com.application.progym.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.application.progym.R;
@@ -22,10 +27,14 @@ import com.application.progym.utilities.Utilities;
  */
 public class Activity_Utility_Timer extends Activity{
 	
-	Button buttonReset, buttonStartStop;
-	TextView textHours, textMinutes, textSeconds;
-	int buttonState;
+	Button buttonReset, buttonStart, buttonStop;
+	EditText textHours, textMinutes, textSeconds;
+	TextView textTestTimer;
+	boolean isStopped;
 	int timerTime;
+	long timerTimeLeft;
+	
+	long hours, minutes, seconds;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,68 +44,126 @@ public class Activity_Utility_Timer extends Activity{
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
 
-		//Instantiate buttons locally
-		buttonReset = (Button) findViewById(R.id.buttonReset);
-		buttonStartStop = (Button) findViewById(R.id.buttonStartStop);
+		//Instantiate buttons 
+		buttonReset = (Button) findViewById(R.id.buttonResetTimer);
+		buttonStart = (Button) findViewById(R.id.buttonStartTimer);
+		buttonStop = (Button) findViewById(R.id.buttonStopTimer);
 		
-		//Instantiate textviews locally
-		textHours = (TextView) findViewById(R.id.textHours);
-		textMinutes = (TextView) findViewById(R.id.textMinutes);
-		textSeconds = (TextView) findViewById(R.id.textSeconds);
+		//Instantiate textviews 
+		textHours = (EditText) findViewById(R.id.textHours);
+		textMinutes = (EditText) findViewById(R.id.textMinutes);
+		textSeconds = (EditText) findViewById(R.id.textSeconds);
+		textTestTimer = (TextView) findViewById(R.id.textTestTimer);
 		
-		buttonState = 0; //0 = Stopped, 1 = Started
+		//Instantiate variables
+		isStopped = true;
+		timerTimeLeft = getTimeLeft();
 		timerTime = 0;
+		
+		//Time Digits
+		hours = Long.valueOf(textHours.getText().toString());
+		minutes = Long.valueOf(textMinutes.getText().toString());
+		seconds = Long.valueOf(textSeconds.getText().toString());
 	}  
 	
 	/**
 	 * Resets the Timer to 0h: 00m: 00s.
 	 */
-	public void buttonReset()
+	public void resetTimer(View view)
 	{
-		stopTimer();
 		textHours.setText("00");
 		textMinutes.setText("00");
 		textSeconds.setText("00");
 	}
 	
 	/**
-	 * Start/Resume countdown or Stop countdown depending on state of the button. 
+	 * Starts/resumes the timer.
+	 * Referenced from: http://developer.android.com/reference/android/os/CountDownTimer.html
 	 */
-	public void buttonStartStop()
-	{
-		buttonState++;
+	public void startTimer(View view)
+	{	
+		//Get timeLeft
+		long countDown = getTimeLeft();
 		
-		if(buttonState > 1) //If 2 (over 0-1 range)
-		{
-			buttonState = 0; //Reset back to 0 (i.e. Stopped)
-		}
-				
-		if(buttonState == 0)
-		{
-			stopTimer(); //If 0, stop the timer
-		}		
-		else
-		{
-			startTimer(); //If 1, start the timer
-		}
+		//Long timeLeft, Long countdownInterval
+		//new CountDownTimer(10000, 1000) {
+		new CountDownTimer(countDown, 1000) {
+
+		     public void onTick(long millisUntilFinished) {
+		         textTestTimer.setText("seconds remaining: " + millisUntilFinished / 1000);
+		         
+		         
+		     }
+
+		     public void onFinish() {
+		    	 textTestTimer.setText("done!");
+		    	
+		    	 	//Play default notification sound
+					MediaPlayer player = MediaPlayer.create(getApplicationContext(),
+					Settings.System.DEFAULT_ALARM_ALERT_URI);
+					player.start();
+		     }
+		  }.start();
 	}
 	
 	/**
 	 * Stops the timer.
 	 */
-	private void stopTimer()
+	public void stopTimer(View view)
 	{
-		buttonStartStop.setText("START");
+		
 	}
 	
 	/**
-	 * Starts/resumes the timer.
+	 * Gets the current time left from the text views.
+	 * @return timeLeft The time left in milliseconds.
 	 */
-	private void startTimer()
+	private long getTimeLeft()
 	{
-		buttonStartStop.setText("STOP");
+		//Initialise variables.
+		long timeLeft = 0;
+		int mhours, mminutes, mseconds = 0;
+		long hours, minutes, seconds = 0;
 		
-		//http://stackoverflow.com/questions/10032003/how-to-make-a-countdown-timer-in-android
+		//Get the values entered by the user.
+		mhours = Integer.valueOf(textHours.getText().toString());
+		mminutes = Integer.valueOf(textMinutes.getText().toString());
+		mseconds = Integer.valueOf(textSeconds.getText().toString());
+		
+		//Multiply each value by appropriate milliseconds.
+		hours = mhours * 3600000; 	//1 hour = 3,600,000 milliseconds.
+		minutes = mminutes * 60000; //1 minute = 60,000 milliseconds.
+		seconds = mseconds * 1000; 	//1 second = 1000 milliseconds.	
+		
+		//Add all the milliseconds together.
+		timeLeft = hours + minutes + seconds;
+		
+		return timeLeft;
+	}
+	
+	/**
+	 * Gets the hour displayed on Hours EditText.
+	 * @return
+	 */
+	private int getHours()
+	{
+		int hours = Integer.valueOf(textHours.getText().toString());
+		
+		return hours;
+	}
+	
+	private int getMinutes()
+	{
+		int minutes = Integer.valueOf(textMinutes.getText().toString());
+		
+		return minutes;
+	}
+	
+	private int getSeconds()
+	{
+		int seconds = Integer.valueOf(textSeconds.getText().toString());
+		
+		return seconds;
 	}
 	
 	/**
