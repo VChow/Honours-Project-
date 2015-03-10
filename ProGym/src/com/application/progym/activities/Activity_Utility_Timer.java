@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.provider.Settings;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,14 +56,9 @@ public class Activity_Utility_Timer extends Activity{
 		textTestTimer = (TextView) findViewById(R.id.textTestTimer);
 		
 		//Instantiate variables
-		isStopped = true;
-		timerTimeLeft = getTimeLeft();
+		isStopped = false;
 		timerTime = 0;
 		
-		//Time Digits
-		hours = Long.valueOf(textHours.getText().toString());
-		minutes = Long.valueOf(textMinutes.getText().toString());
-		seconds = Long.valueOf(textSeconds.getText().toString());
 	}  
 	
 	/**
@@ -74,6 +69,10 @@ public class Activity_Utility_Timer extends Activity{
 		textHours.setText("00");
 		textMinutes.setText("00");
 		textSeconds.setText("00");
+		
+		//Release all Countdown Timers by restarting the activity.
+		finish();
+		startActivity(getIntent());
 	}
 	
 	/**
@@ -82,26 +81,167 @@ public class Activity_Utility_Timer extends Activity{
 	 */
 	public void startTimer(View view)
 	{	
-		//Get timeLeft
-		long countDown = getTimeLeft();
+		//Initialise variables
+		isStopped = false;
+		timerTimeLeft = getHours() + getMinutes() + getSeconds();
 		
-		//Long timeLeft, Long countdownInterval
-		//new CountDownTimer(10000, 1000) {
-		new CountDownTimer(countDown, 1000) {
+		//Start the timers
+		startHoursTimer(getHours());
+		startMinutesTimer(getMinutes());
+		startSecondsTimer(getSeconds());
+		
+		//Change visibility of buttons
+		buttonStart.setVisibility(View.INVISIBLE);
+		buttonStop.setVisibility(View.VISIBLE);
+	}
+	
+	/**
+	 * Starts a new instance of CountDownTimer for the Hours remaining.
+	 * @param hrs The hours remaining in milliseconds.
+	 */
+	private void startHoursTimer(long hrs)
+	{
+		new CountDownTimer(hrs, 3600000) {
 
 		     public void onTick(long millisUntilFinished) {
-		         textTestTimer.setText("seconds remaining: " + millisUntilFinished / 1000);
-		         
-		         
+		    	 
+		    	 //Check if user has paused the timer
+		    	 if(isStopped == true)
+		    	 {
+		    		 cancel();
+		    	 }
+		    	 else
+		    	 {
+		    		 String text = "" + millisUntilFinished / 3600000;
+
+		    		 if(text.length() < 2)
+		    		 {
+		    			 text = "0" + text;
+		    		 }
+
+		    		 textHours.setText(text);
+		    	 }
+		     }
+		     
+		     public void onFinish() {}
+		  }.start();
+	}
+	
+	/**
+	 * Starts a new instance of CountDownTimer for the Minutes remaining.
+	 * @param mins The minutes remaining in milliseconds.
+	 */
+	private void startMinutesTimer(long mins)
+	{
+		new CountDownTimer(mins, 60000) {
+
+			public void onTick(long millisUntilFinished) {
+
+				//Check if user has paused the timer
+				if(isStopped == true)
+				{
+					cancel();
+				}
+				else
+				{
+
+					String text = "" + millisUntilFinished / 60000;
+
+					if(text.length() < 2)
+					{
+						text = "0" + text;
+					}
+
+					textMinutes.setText(text);
+
+					if((timerTimeLeft / 1000) < 60) //if time left is less than 60 secs
+					{
+						textMinutes.setText("00");
+					}
+				}
+			}
+			
+			public void onFinish() {}
+		}.start();
+
+	}
+	
+	/**
+	 * Starts a new instance of CountDownTimer for the Seconds remaining.
+	 * @param secs The seconds remaining in milliseconds.
+	 */
+	private void startSecondsTimer(long secs)
+	{
+		Log.d("PD", "startSecondsTimer() timerTimeLeft: " + timerTimeLeft);
+		
+		new CountDownTimer(secs, 1000) {
+
+		     public void onTick(long millisUntilFinished) {
+		    	 
+		    	//Check if user has paused the timer
+		    	 if(isStopped == true)
+		    	 {
+		    		 cancel();
+		    	 }
+		    	 else
+		    	 {
+		    		 String text = "" + millisUntilFinished / 1000;
+
+		    		 //Decrement total time left by 1 second.
+		    		 timerTimeLeft = timerTimeLeft - 1000;
+		    		 
+		    		 //Print out time left for debugging
+		    		 textTestTimer.setText("Seconds left: " + timerTimeLeft / 1000);
+
+		    		 if(text.length() < 2)
+		    		 {
+		    			 text = "0" + text;
+		    		 }
+
+		    		 textSeconds.setText(text);
+
+		    		 //Timer doesn't drop to 0, so set it manually.
+		    		 if(text.equals("01"))
+		    		 {
+		    			 textSeconds.setText("00");
+		    		 }
+
+		    		 //Check if Hours and Minutes need to be decremented.
+		    		 long timeLeft = timerTimeLeft / 1000; //Convert into seconds, easier to work with.
+		    		 if(timeLeft < 3600) //if time left is under an hour, set text to 0
+		    		 {
+		    			 textHours.setText("00");
+		    			 textMinutes.setText("" + (timeLeft / 60));
+		    		 }
+		    	 }
 		     }
 
-		     public void onFinish() {
-		    	 textTestTimer.setText("done!");
-		    	
-		    	 	//Play default notification sound
-					MediaPlayer player = MediaPlayer.create(getApplicationContext(),
-					Settings.System.DEFAULT_ALARM_ALERT_URI);
+		     public void onFinish()
+		     {
+		    	 long timeLeft = timerTimeLeft / 1000; //Convert into seconds, easier to work with.
+		    	 
+		    	 if(timeLeft < 3600) //if time left is under an hour, set text to 0
+	    		 {
+	    			 textHours.setText("00");
+	    			 textMinutes.setText("" + (timeLeft / 60));
+	    		 }
+		    	 
+		    	 if ((timeLeft) > 0 && (timeLeft) > 60) //if time left is over a minute, start 60 sec timer again
+		    	 {
+		    		 startSecondsTimer(60000);		    		 
+		    	 }
+		    	 else if((timeLeft) > 0 && (timeLeft) < 60) //if time left has few seconds left, set appropriate timer
+		    	 {
+		    		 startSecondsTimer(timeLeft * 1000);
+		    		 textHours.setText("00");
+		    		 textMinutes.setText("00");
+		    	 }
+		    	 else //if 0 or less, play alarm.
+		    	 {
+		    		//Play default notification sound
+					MediaPlayer player = MediaPlayer.create(getApplicationContext(), R.raw.air_horn);
 					player.start();
+		    	 }
 		     }
 		  }.start();
 	}
@@ -111,59 +251,43 @@ public class Activity_Utility_Timer extends Activity{
 	 */
 	public void stopTimer(View view)
 	{
+		buttonStart.setVisibility(View.VISIBLE);
+		buttonStop.setVisibility(View.INVISIBLE);
 		
+		isStopped = true;
 	}
 	
 	/**
-	 * Gets the current time left from the text views.
-	 * @return timeLeft The time left in milliseconds.
+	 * Gets the value displayed on Hours EditText.
+	 * @return long mhours The number of hours.
 	 */
-	private long getTimeLeft()
+	private long getHours()
 	{
-		//Initialise variables.
-		long timeLeft = 0;
-		int mhours, mminutes, mseconds = 0;
-		long hours, minutes, seconds = 0;
+		long mhours = Integer.valueOf(textHours.getText().toString()) * 3600000;
 		
-		//Get the values entered by the user.
-		mhours = Integer.valueOf(textHours.getText().toString());
-		mminutes = Integer.valueOf(textMinutes.getText().toString());
-		mseconds = Integer.valueOf(textSeconds.getText().toString());
-		
-		//Multiply each value by appropriate milliseconds.
-		hours = mhours * 3600000; 	//1 hour = 3,600,000 milliseconds.
-		minutes = mminutes * 60000; //1 minute = 60,000 milliseconds.
-		seconds = mseconds * 1000; 	//1 second = 1000 milliseconds.	
-		
-		//Add all the milliseconds together.
-		timeLeft = hours + minutes + seconds;
-		
-		return timeLeft;
+		return mhours;
 	}
 	
 	/**
-	 * Gets the hour displayed on Hours EditText.
-	 * @return
+	 * Gets the value displayed on Minutes EditText.
+	 * @return long mminutes The number of number of minutes.
 	 */
-	private int getHours()
+	private long getMinutes()
 	{
-		int hours = Integer.valueOf(textHours.getText().toString());
+		long mminutes = Integer.valueOf(textMinutes.getText().toString()) * 60000;
 		
-		return hours;
+		return mminutes;
 	}
 	
-	private int getMinutes()
+	/**
+	 * Gets the value displayed on Seconds EditText.
+	 * @return long mseconds The number of seconds.
+	 */
+	private long getSeconds()
 	{
-		int minutes = Integer.valueOf(textMinutes.getText().toString());
+		long mseconds = Integer.valueOf(textSeconds.getText().toString()) * 1000;
 		
-		return minutes;
-	}
-	
-	private int getSeconds()
-	{
-		int seconds = Integer.valueOf(textSeconds.getText().toString());
-		
-		return seconds;
+		return mseconds;
 	}
 	
 	/**
