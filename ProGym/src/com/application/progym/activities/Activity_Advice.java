@@ -52,19 +52,15 @@ public class Activity_Advice extends Activity{
 		
 		//Generate a random number to append to string_name
 		int rng = rand.nextInt(ADVICE_TOTAL);
-		Log.d("PD", "rng: " + rng);
 		
 		//Append random number to string_name to get a string resource name
 		string_name = string_name + rng;
-		Log.d("PD", "string_name: " + string_name);
 		
 		//Obtain resource id value of string_name
 		int string_id = Activity_Advice.this.getResources().getIdentifier(string_name, "string", Activity_Advice.this.getPackageName());
-		Log.d("PD", "string_id: " + string_id);
 		
 		//Obtain string value of resource id
 		String toDisplay = getResources().getString(string_id);
-		Log.d("PD", "toDisplay: " + toDisplay);
 		
 		//Set text
 		textAdvice.setText(toDisplay);
