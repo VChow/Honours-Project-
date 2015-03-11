@@ -66,10 +66,6 @@ public class Activity_Utility_Timer extends Activity{
 	 */
 	public void resetTimer(View view)
 	{
-		textHours.setText("00");
-		textMinutes.setText("00");
-		textSeconds.setText("00");
-		
 		//Release all Countdown Timers by restarting the activity.
 		finish();
 		startActivity(getIntent());

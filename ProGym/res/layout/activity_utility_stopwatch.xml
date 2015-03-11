@@ -4,77 +4,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <!-- Start of Textviews - Timer  -->
-    <TextView
-        android:id="@+id/textHours"
-        android:layout_width="wrap_content"
+    <!-- Start of EditViews - Stopwatch  -->
+    <Chronometer
+        android:id="@+id/stopwatch"
+        android:format="00:%s"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="00"
+        android:minHeight="200dp"
+        android:minWidth="250dp"
         android:textSize="75sp"
-        android:textColor="#FFFFFF"
-        android:background="#202020"
-        android:minWidth="110dp"
-        android:minHeight="200dp"       	
-        	android:layout_alignParentLeft="true"
-        	android:layout_marginLeft="10dp"
-        	android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        	android:layout_centerHorizontal="true"
+        	android:layout_marginLeft="30dp"
+        	android:layout_marginRight="30dp"
         	android:layout_marginTop="10dp"
         	android:layout_marginBottom="5dp"
         />
 
     <TextView
-        android:id="@+id/textMinutes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="00"
-        android:textSize="75sp"
-        android:textColor="#FFFFFF"
-        android:background="#202020"
-        android:minWidth="110dp"
-        android:minHeight="200dp"
-        	android:layout_centerHorizontal="true"
-        	android:layout_marginLeft="5dp"
-        	android:layout_marginRight="5dp"
-        	android:layout_marginTop="10dp"
-        	android:layout_marginBottom="5dp"
-        />
-    
-    <TextView
-        android:id="@+id/textSeconds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="00"
-        android:textSize="75sp"
-        android:textColor="#FFFFFF"
-        android:background="#202020"
-        android:minWidth="110dp"
-        android:minHeight="200dp"
-        	android:layout_alignParentRight="true"
-        	android:layout_marginLeft="5dp"
-        	android:layout_marginRight="10dp"
-        	android:layout_marginTop="10dp"
-        	android:layout_marginBottom="5dp"
-        />
-    <!-- End of Textviews - Timer  -->
-    
-    
-    
-    <!-- Start of Textviews - Labels  -->
-    <TextView
         android:id="@+id/labelHours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:minWidth="110dp"
+        android:minWidth="100dp"
         android:text="Hours"
         android:textColor="#FFFFFF"
         android:background="#202020"
-        android:textSize="20sp"   
-        	android:layout_below="@+id/textHours"
-        	android:layout_alignLeft="@+id/textHours"        
+        android:textSize="20sp"
+        
+        	android:layout_below="@+id/stopwatch"
+        	android:layout_alignLeft="@+id/stopwatch"	
         />
     
     <TextView
@@ -82,13 +43,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:minWidth="110dp"
         android:text="Minutes"
         android:textColor="#FFFFFF"
         android:background="#202020"
         android:textSize="20sp"
-        	android:layout_below="@+id/textHours"
-        	android:layout_alignLeft="@+id/textMinutes"
+        android:paddingLeft="20sp"
+        android:paddingRight="20sp"
+        	android:layout_below="@+id/stopwatch"
+        	android:layout_centerHorizontal="true"
         />
     
     <TextView
@@ -96,51 +58,84 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:minWidth="110dp"
+        android:minWidth="100dp"
         android:text="Seconds"
         android:textColor="#FFFFFF"
         android:background="#202020"
         android:textSize="20sp"
-        	android:layout_below="@+id/textHours"
-        	android:layout_alignLeft="@+id/textSeconds"
-        />   
-    <!-- End of Textviews - Timer  -->
+        
+        	android:layout_below="@+id/stopwatch"
+        	android:layout_alignRight="@+id/stopwatch"
+        />
     
-    
-    
-    <!-- Start of Buttons -->
+    <!--================ Start of Buttons ================-->
+    <!-- Button: Reset -->
     <Button
-        android:id="@+id/buttonResetLap"
+        android:id="@+id/buttonResetStopwatch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RESET"
-        android:minWidth="160dp" 
+        android:minWidth="145dp" 
         android:layout_marginTop="15dp"
         android:textColor="#FFFFFF"
         android:background="#404040"
-        android:onClick="buttonResetLap"
-        	android:layout_alignLeft="@+id/textHours"
-        	android:layout_below="@+id/labelHours"
+        android:onClick="resetStopwatch"
+        android:visibility="invisible"
+        	android:layout_alignLeft="@+id/stopwatch"
+        	android:layout_below="@+id/labelMinutes"
         />
     
+    <!-- Button: Lap -->
     <Button
-        android:id="@+id/buttonStartStop"
+        android:id="@+id/buttonLapStopwatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LAP"
+        android:minWidth="145dp" 
+        android:layout_marginTop="15dp"
+        android:textColor="#FFFFFF"
+        android:background="#404040"
+        android:onClick="lapStopwatch" 
+        	android:layout_alignLeft="@+id/stopwatch"
+        	android:layout_below="@+id/labelMinutes"
+        />
+    
+    <!-- Button: Start -->
+    <Button
+        android:id="@+id/buttonStartStopwatch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="START" 
-        android:minWidth="160dp"     
+        android:minWidth="145dp"     
         android:layout_marginTop="15dp" 
         android:textColor="#FFFFFF"
         android:background="#404040"
-        android:onClick="buttonStartStop"
-        	android:layout_alignRight="@+id/textSeconds"
-        	android:layout_below="@+id/labelHours"      	
+        android:onClick="startStopwatch"
+        	android:layout_alignRight="@+id/stopwatch"
+        	android:layout_below="@+id/labelMinutes"      	
         />
-    <!-- End of Buttons -->
+    
+    <!-- Button: Stop -->
+    <Button
+        android:id="@+id/buttonStopStopwatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP" 
+        android:minWidth="145dp"     
+        android:layout_marginTop="15dp" 
+        android:textColor="#FFFFFF"
+        android:background="#404040"
+        android:onClick="stopStopwatch"
+        android:visibility="invisible"
+        	android:layout_alignRight="@+id/stopwatch"
+        	android:layout_below="@+id/labelMinutes"      	
+        />
+    
+    <!--================ End of Buttons ============-->
     
     <!-- Table of Laps -->
     <ScrollView
-        android:layout_below="@id/buttonStartStop"
+        android:layout_below="@id/buttonStartStopwatch"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10sp"

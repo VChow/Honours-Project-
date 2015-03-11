@@ -4,7 +4,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-    	android:id="@+id/textLapCounter"
+    	android:id="@+id/textLapCounterHeader"
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
     	android:minWidth="110dp"
@@ -18,7 +18,7 @@
         />
     
     <TextView
-        android:id="@+id/textCurrentCounter"
+        android:id="@+id/textCurrentCounterHeader"
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
     	android:minWidth="110dp"
@@ -32,7 +32,7 @@
         />
 
     <TextView
-        android:id="@+id/textDifferenceCounter"
+        android:id="@+id/textDifferenceCounterHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minWidth="110dp"

@@ -3,6 +3,7 @@ package com.application.progym.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -10,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.Button;
+import android.widget.Chronometer;
+import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TableRow.LayoutParams;
@@ -24,14 +27,17 @@ import com.application.progym.utilities.Utilities;
 
 /**
  * Handles the Stopwatch functionality.
+ * Reference: http://sampleprogramz.com/android/chronometer.php
+ * Reference: http://developer.android.com/reference/android/widget/Chronometer.html
  * 
  */
 public class Activity_Utility_Stopwatch extends Activity{
 	
-	Button buttonResetLap, buttonStartStop;
-	TextView textHours, textMinutes, textSeconds;
-	int resetlap_buttonState, startstop_buttonState;
-	int timerTime;
+	Button buttonReset, buttonLap, buttonStart, buttonStop;
+	EditText textHours, textMinutes, textSeconds;
+	int lapCounter;
+	int current_hour, current_min, current_sec, previous_hour, previous_min, previous_sec;
+	Chronometer stopwatch;
 	
 	TableLayout lapTable;
 	
@@ -43,23 +49,31 @@ public class Activity_Utility_Stopwatch extends Activity{
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
 
-		//Instantiate buttons locally
-		buttonResetLap = (Button) findViewById(R.id.buttonResetLap);
-		buttonStartStop = (Button) findViewById(R.id.buttonStartStop);
+		//Instantiate buttons 
+		buttonReset = (Button) findViewById(R.id.buttonResetStopwatch);
+		buttonLap = (Button) findViewById(R.id.buttonLapStopwatch);
+		buttonStart = (Button) findViewById(R.id.buttonStartStopwatch);
+		buttonStop = (Button) findViewById(R.id.buttonStopStopwatch);
 				
-		//Instantiate textviews locally
-		textHours = (TextView) findViewById(R.id.textHours);
-		textMinutes = (TextView) findViewById(R.id.textMinutes);
-		textSeconds = (TextView) findViewById(R.id.textSeconds);
+		//Instantiate textviews 
+		//textHours = (EditText) findViewById(R.id.textHours);
+		//textMinutes = (EditText) findViewById(R.id.textMinutes);
+		//textSeconds = (EditText) findViewById(R.id.textSeconds);
 		
 		//Instantiate the table
 		lapTable = (TableLayout)findViewById(R.id.tableLaps);
 		addTableHeader(this.findViewById(R.id.tableLaps));
 		
 		//Initialise variables
-		resetlap_buttonState = 0; //0 = Reset, 1 = Lap
-		startstop_buttonState = 0; //0 = Stopped, 1 = Started
-		timerTime = 0;
+		lapCounter = 0;
+		current_hour = current_min = current_sec = previous_hour = previous_min = previous_sec = 0;
+		
+		//Initialise stopwatch
+		//stopwatch = new Chronometer(getApplicationContext());
+		//stopwatch.setBase(SystemClock.elapsedRealtime());
+		//stopwatch.setFormat("H:MM:SS");
+		stopwatch = (Chronometer) findViewById(R.id.stopwatch);
+		stopwatch.setBase(SystemClock.elapsedRealtime());
 	}  
 	
 	/**
@@ -74,83 +88,119 @@ public class Activity_Utility_Stopwatch extends Activity{
 	}
 	 
 	/**
-	 * Start/Resume countdown or Stop countdown depending on state of the button. 
+	 * Start timer
 	 */
-	public void buttonStartStop()
+	public void startStopwatch(View view)
 	{
-		startstop_buttonState++;
+		//Change visibility of buttons
+		buttonStart.setVisibility(View.INVISIBLE);
+		buttonReset.setVisibility(View.INVISIBLE);
+		buttonStop.setVisibility(View.VISIBLE);		
+		buttonLap.setVisibility(View.VISIBLE);
+			
+		stopwatch.start();
 		
-		if(startstop_buttonState > 1) //If 2 (over 0-1 range)
-		{
-			startstop_buttonState = 0; //Reset back to 0 (i.e. Stopped)
-		}
-				
-		if(startstop_buttonState == 0)
-		{
-			stopTimer(); //If 0, stop the timer
-		}		
-		else
-		{
-			startTimer(); //If 1, start the timer
-		}
 	}
 	
 	/**
-	 * Stops the timer.
+	 * Stop timer.
 	 */
-	private void stopTimer()
+	public void stopStopwatch(View view)
 	{
-		buttonStartStop.setText("START");
-	}
-	
-	/**
-	 * Starts/resumes the timer.
-	 */
-	private void startTimer()
-	{
-		buttonStartStop.setText("STOP");
-	}
-	
-	/**
-	 * Start/Resume countdown or Stop countdown depending on state of the button. 
-	 */
-	public void buttonResetLap()
-	{
-		resetlap_buttonState++;
+		//Change visibility of buttons		
+		buttonStop.setVisibility(View.INVISIBLE);
+		buttonLap.setVisibility(View.INVISIBLE);
+		buttonStart.setVisibility(View.VISIBLE);
+		buttonReset.setVisibility(View.VISIBLE);	
 		
-		if(resetlap_buttonState > 1) //If 2 (over 0-1 range)
-		{
-			resetlap_buttonState = 0; //Reset back to 0 (i.e. Stopped)
-		}
-				
-		if(resetlap_buttonState == 0)
-		{
-			reset();
-		}		
-		else
-		{
-			lap(); 
-		}
+		stopwatch.stop();
 	}
 	
 	/**
-	 * Resets the Timer to 0h: 00m: 00s.
+	 * Reset all variables.
 	 */
-	public void reset()
-	{
-		stopTimer();
-		textHours.setText("00");
-		textMinutes.setText("00");
-		textSeconds.setText("00");
+	public void resetStopwatch(View view)
+	{		
+		stopwatch.setBase(SystemClock.elapsedRealtime());
+
+		lapTable.removeViews(1, lapTable.getChildCount()-1);
+
+		lapCounter = 0;
+		
+		previous_hour = previous_min = previous_sec = 0;
 	}
 	
 	/**
-	 * Adds new row to the tablelayout
+	 * Add current time to table. 
+	 */
+	public void lapStopwatch(View view)
+	{
+		Log.d("PD", "Lap: "+ stopwatch.getText().toString());
+		String time = stopwatch.getText().toString();
+	
+		addLap(time);
+	}
+	
+	
+	/**
+	 * Collect data to add new row to lap table.
+	 */
+	public void addLap(String time)
+	{
+		//Increment lapCounter
+		lapCounter++;
+		
+		//Get Hours, Minutes and Seconds from lapped time.
+		String hr = time.substring(0, 2);
+		String min = time.substring(3, 5);
+		String sec = time.substring(6, 8);
+		
+		Log.d("PD", "Hrs: " + hr + " Mins: "+ min + " Secs: " + sec);
+		
+		//Convert to ints
+		current_hour = Integer.valueOf(hr);
+		current_min = Integer.valueOf(min);
+		current_sec = Integer.valueOf(sec);
+
+		int diff_hour, diff_min, diff_sec;
+		
+		//Calculate difference from previous lap.
+		diff_hour = current_hour - previous_hour;
+		diff_min = current_min - previous_min;
+		diff_sec = current_sec - previous_sec;
+		
+		//TODO string manip, add 0's
+		
+		String diff_time = "0" + diff_hour + ":0" + diff_min + ":" + diff_sec;
+		Log.d("PD", "Difference: " + diff_time);
+		
+		//Set previous time with current time.
+		previous_hour = current_hour;
+		previous_min = current_min;
+		previous_sec = current_sec;
+		
+		addLapRow(lapCounter, time, diff_time);
+	}
+	
+	/**
+	 * Adds a new row to the Lap Table.
 	 * Populate with current lap, current time and the time since last lap.
 	 */
-	public void lap()
+	private void addLapRow(int lap, String current_time, String difference_time)
 	{
+		Log.d("PD", "addLapRow() ENTRY, lap: " + lap);
+		TableRow newRow = (TableRow) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tablelap_row, null);
 		
+		TextView counter = (TextView) newRow.findViewById(R.id.textLapCounter);
+		TextView curr_time = (TextView) newRow.findViewById(R.id.textCurrentCounter);
+		TextView diff_time = (TextView) newRow.findViewById(R.id.textDifferenceCounter);
+		
+		counter.setText(String.valueOf(lap));
+		curr_time.setText(current_time);
+		diff_time.setText(difference_time);
+		
+		//Add new Row
+		lapTable.addView(newRow, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 	}
 	
 	/**

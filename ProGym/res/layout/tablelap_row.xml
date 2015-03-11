@@ -10,8 +10,7 @@
     	android:minWidth="100dp"
     	android:textColor="#FFFFFF"
         android:background="#404040"
-        android:textSize="20sp"
-    	android:text="Test Lap 1" 
+        android:textSize="20sp" 
     	android:gravity="center"
     	android:layout_alignParentLeft="true"   
         />
@@ -23,8 +22,7 @@
     	android:minWidth="100dp"
     	android:textColor="#FFFFFF"
         android:background="#404040"
-        android:textSize="20sp"
-    	android:text="01:25:46"  
+        android:textSize="20sp" 
     	android:gravity="center"
     	android:layout_centerHorizontal="true"
         />
@@ -36,8 +34,7 @@
     	android:minWidth="100dp" 
     	android:textColor="#FFFFFF"
         android:background="#404040"
-        android:textSize="20sp"
-    	android:text="05:45:23" 
+        android:textSize="20sp" 
     	android:gravity="center" 
     	android:layout_alignParentRight="true"
         />
