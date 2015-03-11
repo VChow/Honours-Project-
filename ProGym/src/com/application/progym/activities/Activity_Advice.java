@@ -1,8 +1,11 @@
 package com.application.progym.activities;
 
+import java.util.Random;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,29 +26,48 @@ import com.application.progym.utilities.Utilities;
 public class Activity_Advice extends Activity{
 	
 	TextView textAdvice;
+	final int ADVICE_TOTAL = 19;
+	Random rand;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_advice); //Create new layout xml
+		setContentView(R.layout.activity_advice); 
 		
 		ViewConfiguration config = ViewConfiguration.get(this);
 		Utilities.disableHardwareMenuKey(config);
 
-		//Instantiate textview locally.
+		//Instantiate textview.
 		textAdvice = (TextView) findViewById(R.id.textAdvice);
 		
-		generateAdvice(getCurrentFocus());
+		//Initialise variables.
+		rand = new Random();
+		
+		//generateAdvice(getCurrentFocus());
 	}  
 	
 	public void generateAdvice(View view)
 	{
-		String advice = "TEST";
-		//TODO
-		//Create a store with advice strings.
-		//Generate random number and pull a random string to display.
+		String string_name = "advice_";
 		
-		textAdvice.setText(advice);
+		//Generate a random number to append to string_name
+		int rng = rand.nextInt(ADVICE_TOTAL);
+		Log.d("PD", "rng: " + rng);
+		
+		//Append random number to string_name to get a string resource name
+		string_name = string_name + rng;
+		Log.d("PD", "string_name: " + string_name);
+		
+		//Obtain resource id value of string_name
+		int string_id = Activity_Advice.this.getResources().getIdentifier(string_name, "string", Activity_Advice.this.getPackageName());
+		Log.d("PD", "string_id: " + string_id);
+		
+		//Obtain string value of resource id
+		String toDisplay = getResources().getString(string_id);
+		Log.d("PD", "toDisplay: " + toDisplay);
+		
+		//Set text
+		textAdvice.setText(toDisplay);
 	}
 	
 	/**

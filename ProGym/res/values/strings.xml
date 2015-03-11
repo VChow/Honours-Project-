@@ -171,4 +171,81 @@
 	    &#8226; Visit the Google Playstore to check for new updates.
 	</string>
 	
+	<!-- Activity: Advice -->
+	<string name="advice_0">
+	    Studies show that eating slow-digesting carbs (whole grains) before workouts, helps your burn more fat and increases endurance levels.
+	</string>
+	
+	<string name="advice_1">
+	    Consume whey-protein after a workout to help repair damaged/fatigued muscles, leading to an increase in muscle mass.
+	</string>
+	
+	<string name="advice_2">
+	    Use forced reps on your last sets to maximize your workout efficiency.
+	</string>
+	
+	<string name="advice_3">
+	    Heavy weights and lower reps increases strength and overall muscle size. Lower weights and higher reps increases endurance.
+	</string>
+	
+	<string name="advice_4">
+	    Always stretch afer training to prevent injuries to your muscles.
+	</string>
+	
+	<string name="advice_5">
+	    Keep yourself well hydrated throughout your workout/fitness routine. Drinks with electrolytes are most efficient at rehydrating your body after a workout, and replishes your salt levels.
+	</string>
+	
+	<string name="advice_6">
+	    It takes roughly 10 minutes on the treadmill to burn off 100 calories.
+	</string>
+	
+	<string name="advice_7">
+	    Changing your diet to include more carbs and protein will help you increase your muscle size and weight gain.
+	</string>
+	
+	<string name="advice_8">
+	    Triceps make up 2/3 of your upper arm. Train these to make your arm look bigger overall.
+	</string>
+	
+	<string name="advice_9">
+	    To lose fat around the abs, do workouts that target that specific area rather than doing general cardio exercises.
+	</string>
+	
+	<string name="advice_10">
+	    After an effective workout, your muscles should be in pain the following day.
+	</string>
+	
+	<string name="advice_11">
+	    Muscle gain is the process of tearing your muscle fibres by working out, then repairing them with protein.
+	</string>
+	
+	<string name="advice_12">
+	    If you are struggling to keep your weights steady, then you are prone to injury.
+	</string>
+	
+	<string name="advice_13">
+	    Ensure you are using proper form when lifting heavy weight. Proper form will help you workout more efficiently and to avoid injuries.
+	</string>
+	
+	<string name="advice_14">
+	    Do not work out everyday, your body needs at least 1 or 2 days to relax and recover.
+	</string>
+	
+	<string name="advice_15">
+	    Staying hydrated increases your Energy and Focus. You will complete your exercises more easily and benefit more.
+	</string>
+	
+	<string name="advice_16">
+	    Staying hydrated increases your Physical Strength by approximately 10-20%.
+	</string>
+	
+	<string name="advice_17">
+	    Your body cannot lose water without losing sodium and vice versa, you cannot retain water without retaining salt. Drinking sports drinks over pure water is more effective at rehydrating after a workout/fitness session.
+	</string>
+	
+	<string name="advice_18">
+	    Your muscles needs time to recover after a day of working out. Alternate between other parts of the body on different days.
+	</string>
+	
 </resources>
