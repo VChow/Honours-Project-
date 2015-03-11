@@ -169,9 +169,34 @@ public class Activity_Utility_Stopwatch extends Activity{
 		diff_min = current_min - previous_min;
 		diff_sec = current_sec - previous_sec;
 		
-		//TODO string manip, add 0's
+		//Stop negatives
+		if(diff_sec < 0)
+		{
+			diff_sec = previous_sec - current_sec;
+		}
 		
-		String diff_time = "0" + diff_hour + ":0" + diff_min + ":" + diff_sec;
+		//Add in missing 0's.
+		String shour, smin, ssec;
+		
+		shour = String.valueOf(diff_hour);
+		smin = String.valueOf(diff_min);
+		ssec = String.valueOf(diff_sec);
+		
+		if(shour.length() < 2)
+		{
+			shour = "0"+shour;
+		}
+		if(smin.length() < 2)
+		{
+			smin = "0"+smin;
+		}
+		if(ssec.length() < 2)
+		{
+			ssec = "0"+ssec;
+		}
+		
+		//String diff_time = "0" + diff_hour + ":0" + diff_min + ":" + diff_sec;
+		String diff_time = shour + ":" + smin + ":" + ssec;
 		Log.d("PD", "Difference: " + diff_time);
 		
 		//Set previous time with current time.
