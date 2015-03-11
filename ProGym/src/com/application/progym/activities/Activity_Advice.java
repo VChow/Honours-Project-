@@ -21,7 +21,8 @@ import com.application.progym.utilities.Utilities;
  
 /**
  * Displays the Advice page:
- * Random facts?
+ * Reference: http://stackoverflow.com/questions/15007419/getidentifier-always-returns-0
+ * Reference: http://stackoverflow.com/questions/15488238/using-android-getidentifier
  */
 public class Activity_Advice extends Activity{
 	
@@ -46,6 +47,13 @@ public class Activity_Advice extends Activity{
 		//generateAdvice(getCurrentFocus());
 	}  
 	
+	/**
+	 * Called when user presses Next Advice button.
+	 * Generates a random number and pulls corresponding string from
+	 * strings.xml to be displayed.
+	 * 
+	 * @param view
+	 */
 	public void generateAdvice(View view)
 	{
 		String string_name = "advice_";
@@ -57,6 +65,8 @@ public class Activity_Advice extends Activity{
 		string_name = string_name + rng;
 		
 		//Obtain resource id value of string_name
+		//WARNING: Do NOT use R.string.<resource_name> for 1st parameter. Only <resource_name> is needed.
+		//I.e. advice_0 not R.string.advice_0.
 		int string_id = Activity_Advice.this.getResources().getIdentifier(string_name, "string", Activity_Advice.this.getPackageName());
 		
 		//Obtain string value of resource id
