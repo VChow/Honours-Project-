@@ -107,7 +107,7 @@ public class Activity_Home extends Activity {
 				}
 				else if(position == 2) //Calorie Counter
 				{
-					Intent intentCalorie = new Intent(getApplicationContext(),Activity_CalorieCounter.class);
+					Intent intentCalorie = new Intent(getApplicationContext(),Activity_CalorieTracker.class);
 					startActivity(intentCalorie);
 					
 				}

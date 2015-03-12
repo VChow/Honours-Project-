@@ -108,7 +108,7 @@
         
         <!-- Activity_CalorieCounter -->
         <activity
-            android:name="com.application.progym.activities.Activity_CalorieCounter"
+            android:name="com.application.progym.activities.Activity_CalorieTracker"
             android:label="@string/activity_calorie_counter" >                      
         </activity>
         

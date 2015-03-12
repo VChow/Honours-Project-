@@ -4,9 +4,11 @@ import java.lang.reflect.Field;
 
 import android.view.ViewConfiguration;
 
+/**
+ * Contains static methods that are frequently re-used throughout the project.
+ *
+ */
 public class Utilities {
-
-
 
 	/**
 	 * Disable Hardware Menu Button on phones. Force Menu drop down on Action Bar.
