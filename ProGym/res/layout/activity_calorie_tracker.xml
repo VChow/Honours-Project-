@@ -42,7 +42,7 @@
             		/>
         		
         		<TextView
-            		android:id="@+id/textCalories"
+            		android:id="@+id/textTotalCalories"
             		android:layout_width="wrap_content"
             		android:layout_height="wrap_content"
             		android:maxLines="1"
@@ -88,13 +88,14 @@
     
     <!-- Add Button -->
     <Button
-        android:id="@+id/buttonAddFood"
+        android:id="@+id/buttonAddItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add New Item"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"	
-        android:layout_alignParentBottom="true"
-        android:layout_margin="25dp"
+        android:onClick="addCalorieItem"
+        	android:layout_alignParentBottom="true"
+        	android:layout_margin="25dp"
         		/>
 </RelativeLayout>
