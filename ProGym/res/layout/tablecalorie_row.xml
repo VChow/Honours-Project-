@@ -3,13 +3,9 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="#404040" 
-    android:paddingLeft="15dp"
+    android:paddingLeft="35dp"
     android:paddingRight="10dp">
     
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
     <TextView
         android:id="@+id/textItem"
         android:layout_width="wrap_content"
@@ -17,9 +13,8 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:text="Oats"
-        android:gravity="start"
-        	android:layout_gravity="start"
-        	android:layout_alignParentLeft="true"
+        android:gravity="left"    	
+        	android:layout_weight="1"
         />
 
     <TextView
@@ -29,9 +24,9 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:text="500"
-        android:gravity="start"     	
-        	android:layout_gravity="end"
-        	android:layout_alignParentRight="true"
+        android:gravity="center"    	        	
+        	android:layout_weight="1"
+
         />
-    </RelativeLayout>
+
 </TableRow>

@@ -1,7 +1,10 @@
 package com.application.progym.activities;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -21,8 +24,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.TableRow.LayoutParams;
+
 import com.application.progym.R;
 import com.application.progym.activities.menubar.Activity_About;
 import com.application.progym.activities.menubar.Activity_Help;
@@ -43,6 +49,12 @@ public class Activity_CalorieTracker extends Activity{
 	Date currentDate;
 	SimpleDateFormat format;
 	String formattedDate;
+	
+	int dayCalorie, mealCalorie;
+	boolean addMore;
+	
+	TableRow tableHeaderRow;
+	List<TableRow> tableRows;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +91,12 @@ public class Activity_CalorieTracker extends Activity{
 		formattedDate = format.format(currentDate);
 		
 		Log.d("PD", "Formatted Date: " + formattedDate);
+		
+		dayCalorie = mealCalorie = 0;
+		addMore = false;
+		
+		tableHeaderRow = new TableRow(this);
+		tableRows = new ArrayList<TableRow>();
 	}
 	
 	/**
@@ -132,16 +150,28 @@ public class Activity_CalorieTracker extends Activity{
 	}
 	
 	/**
+	 * Resets variables for adding a new Meal.
+	 */
+	private void resetValues()
+	{
+		tableHeaderRow = new TableRow(this);
+		tableRows = new ArrayList<TableRow>();
+		
+		addMore = false;
+		mealCalorie = 0;
+	}
+	
+	/**
 	 * Called when buttonAddItem is pressed.
 	 * Displays series of Alert Dialogs for input.
 	 * Adds input to table.
 	 */
 	public void addCalorieItem(View view)
 	{
+		//Reset values
+		resetValues();
+		
 		//Get input
-		//Add Table Header
-		//Add Table Row(s)
-	
 		getMealType();
 	}
 	
@@ -209,10 +239,12 @@ public class Activity_CalorieTracker extends Activity{
 			@Override
 			public void onClick(DialogInterface dialog, int id) {
 
+				//Get user input values
 				String name = editName.getText().toString();
 				int cals = Integer.valueOf(editCalorie.getText().toString());
 
-				getUserChoice(test, name, cals);
+				//Add values to table
+				addToTable(test, name, cals);
 			}});
 
 		//Set dialog No option
@@ -227,21 +259,183 @@ public class Activity_CalorieTracker extends Activity{
 	/**
 	 * Called after user enters food information for a meal.
 	 * Prompts user if they want to add another item for this meal.
-	 * 
-	 * @param test
-	 * @param name
-	 * @param cals
 	 */
-	private void getUserChoice(String type, String name, int cals)
+	private void getUserChoice()
+	{		
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("Add another item to meal?")
+			   .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+			   {
+				   public void onClick(DialogInterface dialog, int which) {
+					   addMore = true;
+				   }
+			   })
+			   .setNegativeButton("No", new DialogInterface.OnClickListener()
+			   {
+				   public void onClick(DialogInterface dialog, int which) {
+					   addMore = false;
+				   }
+			   })
+			   .show();
+	
+	}
+	
+	/**
+	 * Called after user enters input for new meal.
+	 * Adds input to variables.
+	 * Prompts user for additional items in the meal.
+	 * Add items to the table.
+	 *  
+	 * @param type String the Meal Type: Breakfast, Lunch, Dinner, Snack
+	 * @param name String the Name of the item.
+	 * @param cals String the Calories in the item.
+	 */
+	private void addToTable(String type, String name, int cals)
 	{
 		Log.d("PD", "Meal Type: " + type);
 		Log.d("PD", "Food Name: " + name);
 		Log.d("PD", "Food Cals: " + cals);
 		
-		//Another dialog...
+		//Add values to List<TableRows>
+		addToTableRowsList(name, cals);	
+		
+		//Prompt user for new item in meal.
+		getUserChoice();
+		while(addMore == true)
+		{
+			//show dialog
+			getMoreMealItem();
+			getUserChoice();
+		}
+
+		//Rows are already created at this point		
+		//Create header once we know contents of all rows.
+		createHeader(type);
+
+		//TODO - new methods to add tablerows to table view
+		addRowsToView();
+	
 	}
 	
+	/**
+	 * Creates a Header row for a new Meal.
+	 * 
+	 * @param type String the meal type: Breakfast, Lunch, Dinner, Snack
+	 */
+	private void createHeader(String type)
+	{
+		TableRow headerRow = (TableRow) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tablecalorie_header_row, null);
+
+		//Find TextView for Meal Type and set Meal Type.
+		TextView meal = (TextView) headerRow.findViewById(R.id.textMeal);
+		meal.setText(type);
+		
+		//Find TextView for Total Calories and set Total Calories.
+		TextView calories = (TextView) headerRow.findViewById(R.id.textMealCalorieCount);
+		calories.setText(""+ mealCalorie + " Calories");
+		
+		tableHeaderRow = headerRow;
+		//calorieTable.addView(headerRow, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+	}
 	
+	/**
+	 * MAYBE TAKE IN A STORE???
+	 * @param name
+	 * @param cals
+	 */
+	private void createRow(String name, int cals)
+	{
+		TableRow newRow = (TableRow) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tablecalorie_row, null);
+	
+		TextView foodName = (TextView) newRow.findViewById(R.id.textItem);
+		foodName.setText(name);
+		
+		TextView foodCals = (TextView) newRow.findViewById(R.id.textItemCalorieCount);
+		foodCals.setText(cals + " calories");
+		
+		calorieTable.addView(newRow, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+	}
+	
+	/**
+	 * Adds input to a new TableRow, and store inside List<TableRow>.
+	 * 
+	 * @param name
+	 * @param cals
+	 */
+	private void addToTableRowsList(String name, int cals)
+	{
+		TableRow newRow = (TableRow) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tablecalorie_row, null);
+		
+		TextView foodName = (TextView) newRow.findViewById(R.id.textItem);
+		foodName.setText(name);
+		
+		TextView foodCals = (TextView) newRow.findViewById(R.id.textItemCalorieCount);
+		foodCals.setText(cals + " calories");
+		
+		//Add to running counter for meal
+		mealCalorie = mealCalorie + cals;
+		
+		tableRows.add(newRow);
+	}
+	
+	/**
+	 * Called when user selects option to add more items to meal.
+	 */
+	private void getMoreMealItem()
+	{		
+		//Create layoutinflater and obtain view for future use.
+		LayoutInflater inflater = LayoutInflater.from(this);            
+		final View dialogView = inflater.inflate(R.layout.dialog_calorie_item, null);
+		
+		//Create the dialog
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		
+		//Set dialog properties
+		builder.setTitle("Enter details about food");
+		builder.setView(dialogView);
+
+		//Instantiate EditTexts
+		final EditText editName = (EditText) dialogView.findViewById(R.id.itemName);
+		final EditText editCalorie = (EditText) dialogView.findViewById(R.id.itemCalorie);
+
+		//Set dialog Yes option
+		builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int id) {
+
+				//Get user input values
+				String name = editName.getText().toString();
+				int cals = Integer.valueOf(editCalorie.getText().toString());
+
+				//Add values to table
+				addToTableRowsList(name, cals);
+			}});
+
+		//Set dialog No option
+		builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				Toast.makeText(getApplicationContext(), "Cancelled", Toast.LENGTH_LONG).show();
+			}});
+
+		builder.show();
+	}
+	
+	/**
+	 * Adds all the rows to the view.
+	 */
+	private void addRowsToView()
+	{
+		//Add header to view.
+		calorieTable.addView(tableHeaderRow, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+	
+		//Add all table rows to view.
+		//TODO
+		for(int i = 0; i < tableRows.size(); i++)
+		{
+			calorieTable.addView(tableRows.get(i), new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+		}
+		
+	}
 	
 	/**
 	 * Creates the Menu Bar.

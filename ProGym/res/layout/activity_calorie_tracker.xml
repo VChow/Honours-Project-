@@ -81,7 +81,8 @@
     	<TableLayout
         	android:id="@+id/tableCalories"
         	android:layout_width="fill_parent"
-        	android:layout_height="fill_parent" >"
+        	android:layout_height="fill_parent"
+        	android:background="#404040" >"
     	</TableLayout>
 
     </ScrollView>
