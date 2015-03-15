@@ -105,6 +105,7 @@ public class Activity_CalorieTracker extends Activity{
 	private void initialiseUI()
 	{
 		textDate.setText(formattedDate);
+		textTotalCalories.setText("" + dayCalorie + "/2500 Calories");
 	}
 	
 	/**
@@ -312,9 +313,14 @@ public class Activity_CalorieTracker extends Activity{
 		//Create header once we know contents of all rows.
 		createHeader(type);
 
-		//TODO - new methods to add tablerows to table view
+		//Add HeaderRow and TableRows to the Calorie Table.
 		addRowsToView();
 	
+		//Update running calorie total for the day.
+		dayCalorie = dayCalorie + mealCalorie;
+		
+		//Update UI.
+		textTotalCalories.setText("" + dayCalorie + "/2500 Calories");
 	}
 	
 	/**
@@ -336,24 +342,6 @@ public class Activity_CalorieTracker extends Activity{
 		
 		tableHeaderRow = headerRow;
 		//calorieTable.addView(headerRow, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-	}
-	
-	/**
-	 * MAYBE TAKE IN A STORE???
-	 * @param name
-	 * @param cals
-	 */
-	private void createRow(String name, int cals)
-	{
-		TableRow newRow = (TableRow) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tablecalorie_row, null);
-	
-		TextView foodName = (TextView) newRow.findViewById(R.id.textItem);
-		foodName.setText(name);
-		
-		TextView foodCals = (TextView) newRow.findViewById(R.id.textItemCalorieCount);
-		foodCals.setText(cals + " calories");
-		
-		calorieTable.addView(newRow, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 	}
 	
 	/**
