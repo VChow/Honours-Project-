@@ -52,6 +52,7 @@ public class Activity_CalorieTracker extends Activity{
 	
 	int dayCalorie, mealCalorie;
 	boolean addMore;
+	String type;
 	
 	TableRow tableHeaderRow;
 	List<TableRow> tableRows;
@@ -94,8 +95,9 @@ public class Activity_CalorieTracker extends Activity{
 		
 		dayCalorie = mealCalorie = 0;
 		addMore = false;
+		type = "";
 		
-		tableHeaderRow = new TableRow(this);
+		tableHeaderRow = new TableRow(getApplicationContext());
 		tableRows = new ArrayList<TableRow>();
 	}
 	
@@ -106,6 +108,8 @@ public class Activity_CalorieTracker extends Activity{
 	{
 		textDate.setText(formattedDate);
 		textTotalCalories.setText("" + dayCalorie + "/2500 Calories");
+		
+		calorieTable.removeAllViews();
 	}
 	
 	/**
@@ -204,6 +208,8 @@ public class Activity_CalorieTracker extends Activity{
 				   					break;
 				   			}
 				   			
+				   			type = mealType;
+				   			
 				   			getMealItem(mealType);
 				   		}})
 
@@ -263,18 +269,19 @@ public class Activity_CalorieTracker extends Activity{
 	 */
 	private void getUserChoice()
 	{		
+		
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle("Add another item to meal?")
+		builder.setTitle("Add another item to this meal?")
 			   .setPositiveButton("Yes", new DialogInterface.OnClickListener()
 			   {
-				   public void onClick(DialogInterface dialog, int which) {
-					   addMore = true;
+				   public void onClick(DialogInterface dialog, int which) {				   
+					   getMoreMealItem();
 				   }
 			   })
 			   .setNegativeButton("No", new DialogInterface.OnClickListener()
 			   {
 				   public void onClick(DialogInterface dialog, int which) {
-					   addMore = false;
+					   createAllRows();
 				   }
 			   })
 			   .show();
@@ -299,26 +306,24 @@ public class Activity_CalorieTracker extends Activity{
 		
 		//Add values to List<TableRows>
 		addToTableRowsList(name, cals);	
-		
-		//Prompt user for new item in meal.
-		getUserChoice();
-		while(addMore == true)
-		{
-			//show dialog
-			getMoreMealItem();
-			getUserChoice();
-		}
 
+	}
+	
+	/**
+	 * Create Header and Add all rows to the table view.
+	 */
+	private void createAllRows()
+	{
 		//Rows are already created at this point		
 		//Create header once we know contents of all rows.
-		createHeader(type);
+		createHeader();
 
 		//Add HeaderRow and TableRows to the Calorie Table.
 		addRowsToView();
-	
+
 		//Update running calorie total for the day.
 		dayCalorie = dayCalorie + mealCalorie;
-		
+
 		//Update UI.
 		textTotalCalories.setText("" + dayCalorie + "/2500 Calories");
 	}
@@ -328,7 +333,7 @@ public class Activity_CalorieTracker extends Activity{
 	 * 
 	 * @param type String the meal type: Breakfast, Lunch, Dinner, Snack
 	 */
-	private void createHeader(String type)
+	private void createHeader()
 	{
 		TableRow headerRow = (TableRow) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tablecalorie_header_row, null);
 
@@ -341,7 +346,7 @@ public class Activity_CalorieTracker extends Activity{
 		calories.setText(""+ mealCalorie + " Calories");
 		
 		tableHeaderRow = headerRow;
-		//calorieTable.addView(headerRow, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+		
 	}
 	
 	/**
@@ -364,6 +369,9 @@ public class Activity_CalorieTracker extends Activity{
 		mealCalorie = mealCalorie + cals;
 		
 		tableRows.add(newRow);
+		
+		//Ask again if they want to add more.
+		getUserChoice();
 	}
 	
 	/**
@@ -417,12 +425,14 @@ public class Activity_CalorieTracker extends Activity{
 		calorieTable.addView(tableHeaderRow, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 	
 		//Add all table rows to view.
-		//TODO
 		for(int i = 0; i < tableRows.size(); i++)
 		{
+			if(tableRows.get(i) != null)
+			{
 			calorieTable.addView(tableRows.get(i), new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-		}
 		
+			}
+		}	
 	}
 	
 	/**
