@@ -151,7 +151,17 @@
 	</string>
 	
 	<string name="help_CalorieTracker_1">
-		&#8226; TODO: Update
+		&#8226; <b>Provides a utility which can help you keep track of your calorie intake.</b>
+		\n&#8226; The Menu Bar, located at the top of the screen, will display the current date and current amount of calories consumed.
+		\n&#8226; The Menu Bar provides two navigational buttons: Previous and Next; which allows you to cycle through different days that have been saved on the device.
+		\n&#8226; Select the <b>Add New Item</b> button, located at the bottom of the screen, to add a new meal.
+		\n\t&#8226; Select a Meal Type from the selection: Breakfast, Lunch, Dinner or Snack.
+		\n\t&#8226; Enter the name of the food in the first option.
+		\n\t&#8226; Enter the number of calories from the food in the second option.
+		\n\t&#8226; Select <b>Add Another</b> to add another food to this meal.
+		\n\t&#8226; Select <b>Done</b> to finish adding items to this meal, and add the meal to the table.
+		\n\t&#8226; The total number of calories will be displayed for that meal, and is also added to the running total for that specific day.
+		\n&#8226; The Calorie Tracker will automatically create a new day past midnight. 
 	</string>
 	
 	<string name="help_Run_1">
