@@ -34,6 +34,10 @@
     <string name="action_update">Update</string>
     <string name="action_exit">Exit</string>
     
+    <!-- Activity: Pedometer -->
+    <string name="step_counter">android.hardware.sensor.stepcounter</string>
+	<string name="step_detector">android.hardware.sensor.stepdetector</string>
+    
     <!-- Activity: Calorie Tracker -->
     <string-array name="meal_type">
         <item>Breakfast</item>
