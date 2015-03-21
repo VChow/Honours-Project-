@@ -175,7 +175,7 @@ public class Activity_Utility_Pedometer extends Activity implements SensorEventL
 		
 		isRunning = true;
 		
-		Toast.makeText(this, "Pedometer Started", Toast.LENGTH_LONG).show();
+		Toast.makeText(getApplicationContext(), "Pedometer Started", Toast.LENGTH_LONG).show();
 	}
 	
 	/**
@@ -191,7 +191,7 @@ public class Activity_Utility_Pedometer extends Activity implements SensorEventL
 		
 		isRunning = false;
 		
-		Toast.makeText(this, "Pedometer Stopped", Toast.LENGTH_LONG).show();
+		Toast.makeText(getApplicationContext(), "Pedometer Stopped", Toast.LENGTH_LONG).show();
 	}
 
 	/**

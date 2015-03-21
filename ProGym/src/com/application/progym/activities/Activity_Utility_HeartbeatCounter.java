@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.application.progym.R;
 import com.application.progym.activities.menubar.Activity_About;
@@ -25,7 +26,7 @@ import com.application.progym.utilities.Utilities;
 public class Activity_Utility_HeartbeatCounter extends Activity{
 	
 	Button buttonRecord;
-	int buttonState;
+	TextView textHeartRate;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +39,9 @@ public class Activity_Utility_HeartbeatCounter extends Activity{
 		//Instantiate button
 		buttonRecord = (Button) findViewById(R.id.buttonStartRecord);
 		
-		//Initialise variables
-		buttonState = 0; //0 = Stopped, 1 = Reset
+		//Instantiate textview
+		textHeartRate = (TextView) findViewById(R.id.textHeartRate);
+
 	}  
 	
 	/**
