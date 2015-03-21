@@ -63,13 +63,13 @@
             android:layout_marginTop="10dp" />
     
     <TextView
-        android:id="@+id/textResting"
+        android:id="@+id/textHeartRateZone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="left"
-        android:text="Resting Heart Rate Chart:"
+        android:text="Target Heart Rate Zone:"
         	android:layout_below="@+id/buttonStartRecord"
         	android:layout_alignParentLeft="true"
         	android:layout_marginTop="25dp"
@@ -77,52 +77,22 @@
         />
     
     <ImageView 
-        android:id="@+id/imageResting"
+        android:id="@+id/imageGraph"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/doge"
+        android:src="@drawable/bpm"
         	android:layout_centerHorizontal="true"
-        	android:layout_below="@+id/textResting"
+        	android:layout_below="@+id/textHeartRateZone"
         	android:layout_marginTop="10dp"
         />
   
     <View
             style="@style/Divider"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/imageResting"
+            android:layout_below="@+id/imageGraph"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp" />
     
-    <TextView
-        android:id="@+id/textMaximum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="left"
-        android:text="Maximum Heart Rate Chart:"
-        	android:layout_below="@+id/imageResting"
-        	android:layout_alignParentLeft="true"
-        	android:layout_marginTop="25dp"
-        	android:layout_marginLeft="20dp"
-        />
-    
-    <ImageView 
-        android:id="@+id/imageMaximum"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/doge2"
-        	android:layout_centerHorizontal="true"
-        	android:layout_below="@+id/textMaximum"
-        	android:layout_marginTop="10dp"
-        />
-    
-    <View
-            style="@style/Divider"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/imageMaximum"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="10dp" />
     
     </RelativeLayout>
 </ScrollView>

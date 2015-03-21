@@ -2,8 +2,13 @@ package com.application.progym.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,10 +28,13 @@ import com.application.progym.utilities.Utilities;
  * Handles the Heartbeat Counter functionality.
  * 
  */
-public class Activity_Utility_HeartbeatCounter extends Activity{
+public class Activity_Utility_HeartbeatCounter extends Activity implements SensorEventListener{
 	
 	Button buttonRecord;
 	TextView textHeartRate;
+	
+	private SensorManager sensorManager;
+	private Sensor heartRateSensor;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +50,23 @@ public class Activity_Utility_HeartbeatCounter extends Activity{
 		//Instantiate textview
 		textHeartRate = (TextView) findViewById(R.id.textHeartRate);
 
+		sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+		heartRateSensor = sensorManager.getDefaultSensor(Sensor.TYPE_HEART_RATE);
 	}  
+	
+	protected void onResume() {
+
+	     super.onResume();
+
+	     sensorManager.registerListener(this, heartRateSensor, SensorManager.SENSOR_DELAY_NORMAL);      
+
+
+	 }
+	
+	protected void onStop() {
+	     super.onStop();
+	     sensorManager.unregisterListener(this, heartRateSensor);
+	 }
 	
 	/**
 	 * Display instructions to user and record BPM.
@@ -50,7 +74,8 @@ public class Activity_Utility_HeartbeatCounter extends Activity{
 	public void buttonStartRecord(View view)
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage("Place your thumb over the Heartbeat Sensor and do not remove until it is finished.")
+		//builder.setMessage("Place your thumb over the Heart Rate Sensor and do not remove until it is finished.")
+		builder.setMessage("Heart Rate Sensor not detected on this device. Requires API 20.")
 			   .setTitle("Heartbeat Counter")
 			   .setPositiveButton("Ok", new DialogInterface.OnClickListener()
 			   {
@@ -119,5 +144,19 @@ public class Activity_Utility_HeartbeatCounter extends Activity{
 		default:
 	        return super.onOptionsItemSelected(item);
 		}
+	}
+
+	
+	@Override
+	public void onSensorChanged(SensorEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+	@Override
+	public void onAccuracyChanged(Sensor sensor, int accuracy) {
+		// TODO Auto-generated method stub
+		
 	}
 }
