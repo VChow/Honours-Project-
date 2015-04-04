@@ -55,6 +55,7 @@ public class Activity_Run extends Activity {
 		Utilities.disableHardwareMenuKey(config);
 		//googleMap = ((MapFragment)) getFragmentManager().findFragmentById(R.id.map).getMap();
 		
+		//Initialise the activity
 		initialise(); 
 		
 	}
@@ -83,6 +84,12 @@ public class Activity_Run extends Activity {
 		runTable = (TableLayout) findViewById(R.id.tableRunData);
 	}
 	
+	/**
+	 * Called when user clicks the Start Run Button.
+	 * Starts timer and gets current coordinates.
+	 * 
+	 * @param view
+	 */
 	public void startRun(View view) 
 	{					
 		//Show/Hide buttons
@@ -111,6 +118,12 @@ public class Activity_Run extends Activity {
 		}
 	}
 	
+	/**
+	 * Called when user clicks the End Run Button.
+	 * Stops the timer and calculates statistics for the run duration.
+	 * 
+	 * @param view
+	 */
 	public void stopRun(View view)
 	{
 		//Show/Hide buttons
@@ -176,7 +189,6 @@ public class Activity_Run extends Activity {
 		long timeInSeconds = 0;
 		
 		time = timer.getText().toString();
-		Log.d("PD", "The Timer Time: " + time);
 		
 		//Get Hours, Minutes and Seconds from lapped time.
 		String hr = time.substring(0, 2);
@@ -190,7 +202,6 @@ public class Activity_Run extends Activity {
 		
 		//Get the total time in milliseconds
 		timeInMilliseconds = (hours * 3600000) + (minutes * 60000) + (seconds * 1000);
-		//timeInMilliseconds = (hours * 60000) + (minutes * 1000);
 		
 		//Get the total time in seconds
 		timeInSeconds = timeInMilliseconds / 1000;
@@ -216,13 +227,12 @@ public class Activity_Run extends Activity {
 		time = timer.getText().toString();
 		Log.d("PD", "time: " + time);
 		
-		//Get Hours, Minutes and Seconds from lapped time.
+		//Get Hours, Minutes and Seconds from time.
 		String hr = time.substring(0, 2);
 		String min = time.substring(3, 5);
 		String sec = time.substring(6, 8);
 		
 		timeTaken = "" + hr + ":" + min + ":" + sec;
-		//timeTaken = "" + hr + ":" + min;
 		
 		Log.d("PD", "Time Taken: " + timeTaken);
 		

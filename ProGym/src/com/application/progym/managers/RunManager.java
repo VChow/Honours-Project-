@@ -23,13 +23,8 @@ public class RunManager extends Service implements LocationListener {
 
 	private Context context;
 	
-	// flag for GPS status
     boolean isGPSEnabled = false;
- 
-    // flag for network status
     boolean isNetworkEnabled = false;
- 
-    // flag for GPS status
     boolean canGetLocation = false;
  
     Location location; 
