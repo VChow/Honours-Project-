@@ -29,9 +29,10 @@ import com.application.progym.managers.RunManager;
 import com.application.progym.utilities.Utilities;
 
 /**
- * Handles the Run activity. Allows the user to track their location from start
- * to finish, and calculates how far they have travelled based on their 
- * coordinates. Results are displayed in a table. 
+ * Handles the Run activity. 
+ * Allows the user to track their location from start to finish.
+ * Calculates how far they have travelled based on their coordinates.
+ * Results are displayed in a table. 
  *
  */
 public class Activity_Run extends Activity {
@@ -135,6 +136,11 @@ public class Activity_Run extends Activity {
 		
 		if(gps.canGetLocation())
 		{
+			gps.location = null;
+			gps.latitude = 0;
+			gps.longitude = 0;
+			gps.getLocation();
+			
 			endLatitude = gps.getLatitude(); 
 			endLongitude = gps.getLongitude(); 
 			
