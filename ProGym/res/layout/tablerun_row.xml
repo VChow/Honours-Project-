@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"  
+    android:background="#404040"  
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+    
+    <TextView
+        android:id="@+id/textRunDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:gravity="center"
+        	android:layout_weight="1"
+        />
+    
+    <TextView
+        android:id="@+id/textRunSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:gravity="center"        	
+        	android:layout_weight="1"
+        />
+    
+    <TextView
+        android:id="@+id/textRunTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:gravity="center"        	
+        	android:layout_weight="1"
+        />
+    
+</TableRow>
