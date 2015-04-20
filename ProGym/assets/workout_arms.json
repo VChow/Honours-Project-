@@ -1,17 +1,66 @@
 {
-	"arms": [
-		{
-			"index": 0,
-			"name": "Arms 0",
-			"description": "Test data for Arms 0",
-			"images": [
-				{
-					"path": "doge"
-				},
-				{
-					"path": "doge2"
-				}			
-			]
-		}
-	]
+    "Arms": [
+        {
+            "index": 0,
+            "name": "Barbell Curl",
+            "description": "Stand up with torso upright while holding a barbell at a shoulder-width grip. The palm of your hands should be facing forward and the elbows should be close to the torso. This will be your starting poisition. \nWhile holding the upper arms stationanry, curl the weights forward while contracting the biceps as your breath out.",
+            "image": "doge"
+        },
+        {
+            "index": 1,
+            "name": "Concentration Curls",
+            "description": "Sit down on a flat surface with one dumbell in front of you between your legs. Your legs should be spread with your knees bent and feet on the floor. \nUse your right arm to pick the dumbbell up. Place the back fo your right upper arm on the top of your inner right thigh. Rotate the palm of your hand until it is facing forward away from your thigh.",
+            "image": "doge"
+        },
+        {
+            "index": 3,
+            "name": "Drag Curl",
+            "description": "Grab a barbell with a supinated grip (palms facing forward) and get your elbows close to your torso and back. This will be your starting position. \nAs you exhale, curl the bar up while keeping the elbows to the back as you 'drag' the bar up by keeping it in conteact with your torso.",
+            "image": "doge"
+        },
+        {
+            "index": 4,
+            "name": "Farmers Walk",
+            "description": "Grip the handbells and lift them up, keeping your back straight and your head up. \nWalk taking short, quick steps, and don't forget to breath. Move for a given distance.",
+            "image": "doge2"
+        },
+        {
+            "index": 0,
+            "name": "Plate Pinch",
+            "description": "Grab two wide-rimmed plates and put them together with the smooth sides facing outward. \nUse your fingers to grip the outside part of the plate and your thumb for the other side thus holding both plates together. This is the starting position.",
+            "image": "doge2"
+        }
+    ],
+    "Cardio": [
+        {
+            "index": 0,
+            "name": "Cardio 0",
+            "description": "Test data for Cardio 0",
+            "image": "doge"
+        }
+    ],
+    "Core": [
+        {
+            "index": 0,
+            "name": "Core 0",
+            "description": "Test data for Core 0",
+            "image": "doge"
+        }
+    ],
+    "Legs": [
+        {
+            "index": 0,
+            "name": "Legs 0",
+            "description": "Test data for Legs 0",
+            "image": "doge"
+        }
+    ],
+    "UpperBody": [
+        {
+            "index": 0,
+            "name": "Upperbpdy 0",
+            "description": "Test data for upperbody 0",
+            "image": "doge"
+        }
+    ]
 }

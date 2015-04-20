@@ -111,6 +111,12 @@
             android:label="@string/activity_workout_cardio" >                      
         </activity>
         
+        <!-- Activity_ObjectDescription -->
+        <activity
+            android:name="com.application.progym.activities.Activity_ObjectDescription"
+            android:label="@string/activity_workouts" >                      
+        </activity>
+        
         <!-- ========================= Home Screen Activities =======================  -->
         
         <!-- Activity_Workouts -->

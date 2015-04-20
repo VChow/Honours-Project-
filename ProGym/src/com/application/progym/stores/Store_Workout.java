@@ -9,7 +9,7 @@ public class Store_Workout {
 	public int index; //Index of object
 	public String name; //Name of workout
 	public String description; //Description of workout
-	public ArrayList<String> image_paths; //List of images to be displayed
+	public String image;
 	
 	public int getIndex() {
 		return index;
@@ -29,11 +29,10 @@ public class Store_Workout {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public ArrayList<String> getImage_paths() {
-		return image_paths;
+	public void setImage(String image){
+		this.image = image;
 	}
-	public void setImage_paths(ArrayList<String> image_paths) {
-		this.image_paths = image_paths;
+	public String getImage(){
+		return this.image;
 	}
-	
 }

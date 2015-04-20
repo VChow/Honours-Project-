@@ -1,7 +1,11 @@
 package com.application.progym.adapters;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
 
 import android.content.Context;
 import android.net.Uri;
@@ -14,13 +18,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.application.progym.R;
+import com.application.progym.libs.PojoMapper;
 import com.application.progym.stores.Store_Workout;
+import com.application.progym.stores.Store_Workouts;
+import com.application.progym.utilities.JSONFetcher;
 
 public class ImageAdapterWorkout_Arms extends BaseAdapter{
 
 	private List<Item> items = new ArrayList<Item>();
     private LayoutInflater inflater;
 
+    private ArrayList<Store_Workout> workouts = new ArrayList<Store_Workout>();
+    
+    public Context context;
+    
     /**
      * Instantiates a new instance of the ImageAdapterMain class.
      * 
@@ -28,34 +39,61 @@ public class ImageAdapterWorkout_Arms extends BaseAdapter{
      */
     public ImageAdapterWorkout_Arms(Context context, ArrayList<Store_Workout> workouts) {
         inflater = LayoutInflater.from(context);
-
-        addItems(workouts, context);
+        
+        //addItems(workouts, context);
+        
+        this.context = context;
     }
 
-    //Adds new items to the grid based on the List of items.
-    public void addItems(ArrayList<Store_Workout> workouts, Context context)
+    /**
+     * Instantiates a new instance of the ImageAdapterMain class.
+     * 
+     * @param context The Context of the application/object.
+     */
+    public ImageAdapterWorkout_Arms(Context context)
     {
-    	//Store_Workout workout = new Store_Workout();
-    	
-    	//Loop through all workouts, add image to grid if not empty.
-    	for(int i = 0; i < workouts.size(); i++)
-    	{
-    		String name = (workouts.get(i)).getName();
-    		String imagename = (workouts.get(i).getImage_paths().get(0));
-    		String final_imagename = "R.drawable." + imagename;
-    		
-    		//http://stackoverflow.com/questions/4427608/android-getting-resource-id-from-string
-    		//int resId=ImageAdapterWorkout_Arms.this.getResources().getIdentifier("ball_red", "drawable", ImageAdapterWorkout_Arms.this.getPackageName());
-    		
-    		//http://stackoverflow.com/questions/15488238/using-android-getidentifier
-    		int resourceID = context.getResources().getIdentifier(imagename, "drawable", context.getPackageName());
-    		Log.d("PD", "Imagename: " + imagename + " resourceID:" + resourceID);
-    		
-    		//items.add(new Item(name, R.drawable.doge));
-    		items.add(new Item(name, resourceID));
-    	}
+        inflater = LayoutInflater.from(context);
+        this.context = context;
+        
+        String JSONString;
+        
+        //Get workouts from the JSON.
+        JSONString = JSONFetcher.readAssets(context, "workout_arms.json");
+        
+        //Parse string into workouts ArrayList Store.
+        parseString(JSONString);
+        
     }
     
+    /**
+     * Takes the JSONString and parses the JSON objects into individual items.
+     */
+    private void parseString(String string)
+    {
+    	try {
+			Store_Workouts allWorkouts = (Store_Workouts)PojoMapper.fromJson(string, Store_Workouts.class);
+			for(Store_Workout workout : allWorkouts.Arms)
+			{ 
+				addItem(workout.getName(), workout.getImage());
+			}
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+        
+    public void addItem(String workout_name, String image_name)
+    {
+    	int resourceID = context.getResources().getIdentifier(image_name, "drawable", context.getPackageName());
+    	
+    	items.add(new Item(workout_name,resourceID));
+    }
   
     
     /* (non-Javadoc)
