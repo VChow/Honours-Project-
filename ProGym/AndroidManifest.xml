@@ -101,7 +101,7 @@
         
         <!-- Activity_Workout_UpperBody -->
         <activity
-            android:name="com.application.progym.activities.Activity_Workout_Upperbody"
+            android:name="com.application.progym.activities.Activity_Workout_UpperBody"
             android:label="@string/activity_workout_upperbody" >                      
         </activity>
         

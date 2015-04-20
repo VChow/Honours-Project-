@@ -3,31 +3,31 @@
         {
             "index": 0,
             "name": "Barbell Curl",
-            "description": "Stand up with torso upright while holding a barbell at a shoulder-width grip. The palm of your hands should be facing forward and the elbows should be close to the torso. This will be your starting poisition. \nWhile holding the upper arms stationanry, curl the weights forward while contracting the biceps as your breath out.",
+            "description": "Stand up with torso upright while holding a barbell at a shoulder-width grip. The palm of your hands should be facing forward and the elbows should be close to the torso. This will be your starting position. \n\nWhile holding the upper arms stationanry, curl the weights forward while contracting the biceps as your breath out. \n\nContinue the movement until your biceps are fully contracted and the bar is at shoulder level. Hold the contracted position for a second and squeeze the biceps hard. \n\nSlowly begin to bring the bar back to the starting position as you breath in.",
             "image": "doge"
         },
         {
             "index": 1,
             "name": "Concentration Curls",
-            "description": "Sit down on a flat surface with one dumbell in front of you between your legs. Your legs should be spread with your knees bent and feet on the floor. \nUse your right arm to pick the dumbbell up. Place the back fo your right upper arm on the top of your inner right thigh. Rotate the palm of your hand until it is facing forward away from your thigh.",
+            "description": "Sit down on a flat surface with one dumbell in front of you between your legs. Your legs should be spread with your knees bent and feet on the floor. \n\nUse your right arm to pick the dumbbell up. Place the back of your right upper arm on the top of your inner right thigh. Rotate the palm of your hand until it is facing forward away from your thigh. \n\nWhile holding the upper arm stationary, curl the weights forward while contracting the biceps as you breathe out. Only the forearms should move. Continue the movement untiol yuor biceps are fully contracted and the dumbbels are at shoulder level. \n\nSlowly being to bring the dumbbells back to starting position as you breath.",
+            "image": "doge"
+        },
+        {
+            "index": 2,
+            "name": "Drag Curl",
+            "description": "Grab a barbell with a supinated grip (palms facing forward) and get your elbows close to your torso and back. This will be your starting position. \n\nAs you exhale, curl the bar up while keeping the elbows to the back as you 'drag' the bar up by keeping it in conteact with your torso. \n\nSlowly go back to the starting position as you keep the bar in contact with the torso at all times.",
             "image": "doge"
         },
         {
             "index": 3,
-            "name": "Drag Curl",
-            "description": "Grab a barbell with a supinated grip (palms facing forward) and get your elbows close to your torso and back. This will be your starting position. \nAs you exhale, curl the bar up while keeping the elbows to the back as you 'drag' the bar up by keeping it in conteact with your torso.",
-            "image": "doge"
-        },
-        {
-            "index": 4,
             "name": "Farmers Walk",
-            "description": "Grip the handbells and lift them up, keeping your back straight and your head up. \nWalk taking short, quick steps, and don't forget to breath. Move for a given distance.",
+            "description": "Begin by standing between the handbells. Grip the handbells and lift them up, keeping your back straight and your head up. \n\nWalk taking short, quick steps, and don't forget to breath. Move for a given distance.",
             "image": "doge2"
         },
         {
-            "index": 0,
+            "index": 4,
             "name": "Plate Pinch",
-            "description": "Grab two wide-rimmed plates and put them together with the smooth sides facing outward. \nUse your fingers to grip the outside part of the plate and your thumb for the other side thus holding both plates together. This is the starting position.",
+            "description": "Grab two wide-rimmed plates and put them together with the smooth sides facing outward. \n\nUse your fingers to grip the outside part of the plate and your thumb for the other side thus holding both plates together. This is the starting position. \n\nSqueeze the plate with your fingers and thumb. Hold this position for as long as you can.",
             "image": "doge2"
         }
     ],
@@ -42,24 +42,96 @@
     "Core": [
         {
             "index": 0,
-            "name": "Core 0",
-            "description": "Test data for Core 0",
+            "name": "Sit-Up",
+            "description": "Lie down on the floor and secure your feet. Your legs should be bent at the knees. \n\nPlace your hands behind or to the side of your head. You will begin with your back on the ground. This will be your starting position. \n\nFlex your hips and spine to raise your torso toward your knees. \n\nAt the top of the contraction your torso should be perpendicular to the ground. Reverse the motion, going only ¾ of the way down.",
+            "image": "doge"
+        },
+        {
+            "index": 1,
+            "name": "Air-Bike",
+            "description": "Lie flat on the floor with your lower back pressed to the ground. For this exercise, you will need to put your hands beside your head. Be careful however to not strain with the neck as you perform it. Now lift your shoulders into the crunch position. \n\nBring knees up to where they are perpendicular to the floor, with your lower legs parallel to the floor. This will be your starting position. \n\nNow simultaneously, slowly go through a cycle pedal motion kicking forward with the right leg and bringing in the knee of the left leg. Bring your right elbow close to your left knee by crunching to the side, as you breathe out. \n\nGo back to the initial position as you breathe in. \n\nCrunch to the opposite side as you cycle your legs and bring closer your left elbow to your right knee and exhale.",
+            "image": "doge"
+        },
+        {
+            "index": 2,
+            "name": "Heel Touchers",
+            "description": "Lie on the floor with the knees bent and the feet on the floor around 18-24 inches apart. Your arms should be extended by your side. This will be your starting position. \n\nCrunch over your torso forward and up about 3-4 inches to the right side and touch your right heel as you hold the contraction for a second. Exhale while performing this movement. \n\nNow go back slowly to the starting position as you inhale. \n\nNow crunch over your torso forward and up around 3-4 inches to the left side and touch your left heel as you hold the contraction for a second. Exhale while performing this movement and then go back to the starting position as you inhale. Now that both heels have been touched, that is considered 1 repetition.",
+            "image": "doge"
+        },
+        {
+            "index": 3,
+            "name": "Hip Raise",
+            "description": "Lay flat on the floor with your arms next to your sides. \n\nNow bend your knees at around a 75 degree angle and lift your feet off the floor by around 2 inches. \n\nUsing your lower abs, bring your knees in towards you as you maintain the 75 degree angle bend in your legs. Continue this movement until you raise your hips off of the floor by rolling your pelvis backward. Breathe out as you perform this portion of the movement. Tip: At the end of the movement your knees will be over your chest. \n\nSqueeze your abs at the top of the movement for a second and then return to the starting position slowly as you breathe in. Tip: Maintain a controlled motion at all times.",
+            "image": "doge"
+        },
+        {
+            "index": 4,
+            "name": "Bottoms-Up",
+            "description": "Begin by lying on your back on the ground. Your legs should be straight and your arms at your side. This will be your starting position. \n\nTo perform the movement, tuck the knees toward your chest by flexing the hips and knees. Following this, extend your legs directly above you so that they are perpendicular to the ground. Rotate and elevate your pelvis to raise your glutes from the floor. \n\nAfter a brief pause, return to the starting position.",
             "image": "doge"
         }
     ],
     "Legs": [
         {
             "index": 0,
-            "name": "Legs 0",
-            "description": "Test data for Legs 0",
+            "name": "Barbell Full Squat",
+            "description": "This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack just above shoulder level. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it. \n\nHold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso. \n\nStep away from the rack and position your legs using a shoulder-width medium stance with the toes slightly pointed out. Keep your head up at all times and maintain a straight back. This will be your starting position. \n\nBegin to slowly lower the bar by bending the knees and sitting back with your hips as you maintain a straight posture with the head up. Continue down until your hamstrings are on your calves. Inhale as you perform this portion of the movement. \n\nBegin to raise the bar as you exhale by pushing the floor with the heel or middle of your foot as you straighten the legs and extend the hips to go back to the starting position.",
+            "image": "doge"
+        },
+        {
+            "index": 1,
+            "name": "Barbell Hack Squat",
+            "description": "Stand up straight while holding a barbell behind you at arms length and your feet at shoulder width. Tip: A shoulder width grip is best with the palms of your hands facing back. You can use wrist wraps for this exercise for a better grip. This will be your starting position. \n\nWhile keeping your head and eyes up and back straight, squat until your upper thighs are parallel to the floor. Breathe in as you slowly go down. \n\nPressing mainly with the heel of the foot and squeezing the thighs, go back up as you breathe out.",
+            "image": "doge"
+        },
+        {
+            "index": 2,
+            "name": "Barbell Lunge",
+            "description": "This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack just below shoulder level. Once the correct height is chosen and the bar is loaded, step under the bar and place the back of your shoulders (slightly below the neck) across it. \n\nHold on to the bar using both arms at each side and lift it off the rack by first pushing with your legs and at the same time straightening your torso. \n\nStep away from the rack and step forward with your right leg and squat down through your hips, while keeping the torso upright and maintaining balance. Inhale as you go down. Note: Do not allow your knee to go forward beyond your toes as you come down, as this will put undue stress on the knee joint. \n\nUsing mainly the heel of your foot, push up and go back to the starting position as you exhale.",
+            "image": "doge"
+        },
+        {
+            "index": 3,
+            "name": "Barbell Seated Calf",
+            "description": "Place a block about 12 inches in front of a flat bench. \n\nSit on the bench and place the ball of your feet on the block. \n\nHave someone place a barbell over your upper thighs about 3 inches above your knees and hold it there. This will be your starting position. \n\nRaise up on your toes as high as possible as you squeeze the calves and as you breathe out. \n\nAfter a second contraction, slowly go back to the starting position. Tip: To get maximum benefit stretch your calves as far as you can.",
+            "image": "doge"
+        },
+        {
+            "index": 4,
+            "name": "Calf Stretch",
+            "description": "Stand facing a wall from several feet away. Stagger your stance, placing one foot forward. \n\nLean forward and rest your hands on the wall, keeping your heel, hip and head in a straight line. \n\nAttempt to keep your heel on the ground. Hold for 10-20 seconds and then switch sides.",
             "image": "doge"
         }
     ],
     "UpperBody": [
         {
             "index": 0,
-            "name": "Upperbpdy 0",
-            "description": "Test data for upperbody 0",
+            "name": "Deltoid Raise",
+            "description": "In a standing position, hold a pair of dumbbells at your side. \n\nKeeping your elbows slightly bent, raise the weights directly in front of you to shoulder height, avoiding any swinging or cheating. \n\nReturn the weights to your side. \n\nOn the next repetition, raise the weights laterally, raising them out to your side to about shoulder height.",
+            "image": "doge"
+        },
+        {
+            "index": 1,
+            "name": "Arm Circles",
+            "description": "Stand up and extend your arms straight out by the sides. The arms should be parallel to the floor and perpendicular (90-degree angle) to your torso. This will be your starting position. \n\nSlowly start to make circles of about 1 foot in diameter with each outstretched arm. Breathe normally as you perform the movement. \n\nContinue the circular motion of the outstretched arms for about ten seconds. Then reverse the movement, going the opposite direction.",
+            "image": "doge"
+        },
+        {
+            "index": 2,
+            "name": "Barbell Shoulder Press",
+            "description": "Sit on a bench with back support in a squat rack. Position a barbell at a height that is just above your head. Grab the barbell with a pronated grip (palms facing forward). \n\nOnce you pick up the barbell with the correct grip width, lift the bar up over your head by locking your arms. Hold at about shoulder level and slightly in front of your head. This is your starting position. \n\nLower the bar down to the shoulders slowly as you inhale. \n\nLift the bar back up to the starting position as you exhale.",
+            "image": "doge"
+        },
+        {
+            "index": 3,
+            "name": "Barbell Bench Press",
+            "description": "Lie back on a flat bench. Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked. This will be your starting position. \n\nFrom the starting position, breathe in and begin coming down slowly until the bar touches your middle chest. \n\nAfter a brief pause, push the bar back to the starting position as you breathe out. Focus on pushing the bar using your chest muscles. Lock your arms and squeeze your chest in the contracted position at the top of the motion, hold for a second and then start coming down slowly again. Tip: Ideally, lowering the weight should take about twice as long as raising it.",
+            "image": "doge"
+        },
+        {
+            "index": 4,
+            "name": "Dumbbell Pullover",
+            "description": "Place a dumbbell standing up on a flat bench. \n\nEnsuring that the dumbbell stays securely placed at the top of the bench, lie perpendicular to the bench (torso across it as in forming a cross) with only your shoulders lying on the surface. Hips should be below the bench and legs bent with feet firmly on the floor. The head will be off the bench as well. \n\nGrasp the dumbbell with both hands and hold it straight over your chest with a bend in your arms. Both palms should be pressing against the underside one of the sides of the dumbbell. This will be your starting position. Caution: Always ensure that the dumbbell used for this exercise is secure. Using a dumbbell with loose plates can result in the dumbbell falling apart and falling on your face. \n\nWhile keeping your arms locked in the bent arm position, lower the weight slowly in an arc behind your head while breathing in until you feel a stretch on the chest. \n\nAt that point, bring the dumbbell back to the starting position using the arc through which the weight was lowered and exhale as you perform this movement.",
             "image": "doge"
         }
     ]

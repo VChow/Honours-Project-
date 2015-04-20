@@ -36,7 +36,6 @@ import android.widget.GridView;
 public class Activity_Workout_Arms extends Activity{
 	
 	String JSONString = "";
-	//private ArrayList<Store_Workout> workouts = new ArrayList<Store_Workout>();
 	private Store_Workouts allWorkouts = new Store_Workouts();
 	
 	@Override
@@ -55,7 +54,7 @@ public class Activity_Workout_Arms extends Activity{
         setupGridView();
 		
 	}  
-	
+	 
 	/**
 	 * Constructs the Grid View and populates with Images via the ImageAdapters.
 	 */
@@ -117,7 +116,7 @@ public class Activity_Workout_Arms extends Activity{
 			e.printStackTrace();
 		}
     }
-	
+	 
 	/**
 	 * Creates the Menu Bar.
 	 * 

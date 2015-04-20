@@ -75,6 +75,7 @@ public class ImageAdapterWorkout_Arms extends BaseAdapter{
 			for(Store_Workout workout : allWorkouts.Arms)
 			{ 
 				addItem(workout.getName(), workout.getImage());
+				Log.d("PD", "Arms:" + workout.name);
 			}
 		} catch (JsonMappingException e) {
 			// TODO Auto-generated catch block
