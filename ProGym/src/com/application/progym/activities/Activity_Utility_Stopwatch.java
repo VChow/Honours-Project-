@@ -54,11 +54,6 @@ public class Activity_Utility_Stopwatch extends Activity{
 		buttonLap = (Button) findViewById(R.id.buttonLapStopwatch);
 		buttonStart = (Button) findViewById(R.id.buttonStartStopwatch);
 		buttonStop = (Button) findViewById(R.id.buttonStopStopwatch);
-				
-		//Instantiate textviews 
-		//textHours = (EditText) findViewById(R.id.textHours);
-		//textMinutes = (EditText) findViewById(R.id.textMinutes);
-		//textSeconds = (EditText) findViewById(R.id.textSeconds);
 		
 		//Instantiate the table
 		lapTable = (TableLayout)findViewById(R.id.tableLaps);
@@ -69,9 +64,6 @@ public class Activity_Utility_Stopwatch extends Activity{
 		current_hour = current_min = current_sec = previous_hour = previous_min = previous_sec = 0;
 		
 		//Initialise stopwatch
-		//stopwatch = new Chronometer(getApplicationContext());
-		//stopwatch.setBase(SystemClock.elapsedRealtime());
-		//stopwatch.setFormat("H:MM:SS");
 		stopwatch = (Chronometer) findViewById(R.id.stopwatch);
 		stopwatch.setBase(SystemClock.elapsedRealtime());
 	}  
@@ -213,7 +205,6 @@ public class Activity_Utility_Stopwatch extends Activity{
 	 */
 	private void addLapRow(int lap, String current_time, String difference_time)
 	{
-		Log.d("PD", "addLapRow() ENTRY, lap: " + lap);
 		TableRow newRow = (TableRow) LayoutInflater.from(getApplicationContext()).inflate(R.layout.tablelap_row, null);
 		
 		TextView counter = (TextView) newRow.findViewById(R.id.textLapCounter);

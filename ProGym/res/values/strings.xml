@@ -10,7 +10,7 @@
     <string name="activity_workouts">Workouts</string>
     <string name="activity_utilities">Utilities</string>
     <string name="activity_advice">Advice</string>
-    <string name="activity_calorie_counter">Calorie Counter</string>
+    <string name="activity_calorie_counter">Calorie Tracker</string>
     <string name="activity_run">Run</string>
     
     <!-- Activities: Utilities -->  

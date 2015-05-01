@@ -69,6 +69,9 @@ public class Activity_ObjectDescription extends Activity{
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 	
+	/**
+	 * Calls relevant methods to populate UI Widgets.
+	 */
 	public void displayObjectDetails()
 	{
 		setTitle(name);
@@ -80,6 +83,9 @@ public class Activity_ObjectDescription extends Activity{
         textView.setText(description);
 	}
 	
+	/**
+	 * Populates the Image Gallery using the imageNames ArrayList.
+	 */
 	public void setImageGallery()
 	{
 		Log.d("PD", "setImageGallery() ENTRY");
@@ -104,6 +110,9 @@ public class Activity_ObjectDescription extends Activity{
         });
 	}
 	
+	/**
+	 * Sets the selectedImage ImageView.
+	 */
 	public void setImage()
 	{
 		//selectedImage=(ImageView)findViewById(R.id.imageSelected);

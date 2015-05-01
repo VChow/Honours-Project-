@@ -268,8 +268,6 @@ public class Activity_Run extends Activity {
 		//Calculate distance travelled in meters
 		distanceTravelled = startLocation.distanceTo(endLocation);
 		
-		Log.d("PD", "getDistanceTravelled: " + distanceTravelled + "m");
-		
 		return distanceTravelled;
 	}
 	
