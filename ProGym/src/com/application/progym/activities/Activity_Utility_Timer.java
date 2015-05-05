@@ -55,10 +55,11 @@ public class Activity_Utility_Timer extends Activity{
 		textSeconds = (EditText) findViewById(R.id.textSeconds);
 		textTestTimer = (TextView) findViewById(R.id.textTestTimer);
 		
-		//Instantiate variables
+		//Instantiate variables 
 		isStopped = false;
 		timerTime = 0;
 		
+		textTestTimer.setVisibility(View.INVISIBLE); 
 	}  
 	
 	/**
@@ -222,20 +223,26 @@ public class Activity_Utility_Timer extends Activity{
 	    			 textMinutes.setText("" + (timeLeft / 60));
 	    		 }
 		    	 
-		    	 if ((timeLeft) > 0 && (timeLeft) > 60) //if time left is over a minute, start 60 sec timer again
+		    	 if ((timeLeft) > 60) //if time left is over a minute, start 60 sec timer again
 		    	 {
 		    		 startSecondsTimer(60000);		    		 
 		    	 }
-		    	 else if((timeLeft) > 0 && (timeLeft) < 60) //if time left has few seconds left, set appropriate timer
+		    	 else if((timeLeft) > 1 && (timeLeft) < 60) //if time left has few seconds left, set appropriate timer
 		    	 {
 		    		 startSecondsTimer(timeLeft * 1000);
 		    		 textHours.setText("00");
 		    		 textMinutes.setText("00");
 		    	 }
+		    	 else if (timeLeft == 1)
+		    	 {
+		    		//Play default notification sound
+						MediaPlayer player = MediaPlayer.create(getApplicationContext(), R.raw.alarm_tone2);
+						player.start();
+		    	 }
 		    	 else //if 0 or less, play alarm.
 		    	 {
 		    		//Play default notification sound
-					MediaPlayer player = MediaPlayer.create(getApplicationContext(), R.raw.air_horn);
+					MediaPlayer player = MediaPlayer.create(getApplicationContext(), R.raw.alarm_tone2);
 					player.start();
 		    	 }
 		     }

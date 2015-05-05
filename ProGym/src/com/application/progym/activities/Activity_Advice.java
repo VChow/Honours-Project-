@@ -44,7 +44,7 @@ public class Activity_Advice extends Activity{
 		//Initialise variables.
 		rand = new Random();
 		
-		//generateAdvice(getCurrentFocus());
+		generateAdvice(getCurrentFocus());
 	}  
 	
 	/**
